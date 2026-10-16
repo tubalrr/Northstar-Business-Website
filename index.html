@@ -98,6 +98,19 @@ body.light .approach-overlay{background:rgba(20,30,20,.42)}
 .approach-foot strong{color:var(--text)}
 .approach-done{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--accent);color:#172014;padding:11px 16px;font-size:.84rem;font-weight:800;cursor:pointer}
 @media(max-width:600px){.approach-overlay{padding:12px}.approach-panel{border-radius:22px;padding:25px 20px}.approach-grid{grid-template-columns:1fr}.approach-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.approach-close{top:13px;right:13px}.approach-foot{align-items:flex-start;flex-direction:column}}
+
+.services-panel h2{margin-bottom:14px}
+.services-lead strong{color:var(--text)}
+.services-cta-area{align-items:flex-start}
+.services-cta-copy{flex:1;min-width:0}
+.services-cta-copy h3{margin:0 0 9px;font-size:1.2rem;letter-spacing:-.03em;color:var(--text)}
+.services-cta-copy p{margin:0 0 10px;color:var(--muted);font-size:.85rem;line-height:1.7}
+.services-cta-copy small{display:block;color:var(--muted);font-size:.72rem;line-height:1.55}
+.services-cta-actions{display:flex;flex-direction:column;gap:8px;flex:0 0 225px}
+.services-cta.sample-cta{width:100%;text-align:left;justify-content:flex-start;background:var(--glass);border:1px solid var(--line);color:var(--text);padding:11px 13px;font-size:.78rem;font-weight:700}
+.services-cta.sample-cta:hover{border-color:rgba(198,243,107,.5);background:rgba(198,243,107,.07)}
+.services-back{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);padding:10px 14px;font-size:.8rem;cursor:pointer}
+@media(max-width:600px){.services-cta-area{align-items:stretch}.services-cta-actions{flex:1}.services-cta-copy h3{font-size:1.1rem}}
 </style></head>
 <body><div class="shell" id="top">
 <header><a class="brand" href="#top" aria-label="Northstar home"><img class="brand-mark" src="northstar-logo.svg" alt="" width="42" height="42"><span>northstar<span style="color:var(--accent)">.</span></span></a>
@@ -131,16 +144,26 @@ body.light .approach-overlay{background:rgba(20,30,20,.42)}
 <div class="services-overlay" id="servicesOverlay" hidden>
 <section class="services-panel" id="servicesPanel" role="dialog" aria-modal="true" aria-labelledby="servicesTitle" aria-describedby="servicesDescription" tabindex="-1">
 <button class="services-close" id="servicesClose" type="button" aria-label="Close Services window">×</button>
-<div class="services-kicker">Hypothetical examples · Demo content</div>
-<h2 id="servicesTitle">Sample services for<br><span style="color:var(--accent)">a fictional brand.</span></h2>
-<p class="services-lead" id="servicesDescription">These example service cards are included only to demonstrate the website layout. Northstar is not an operating company, and nothing shown here is available to purchase or request.</p>
+<div class="services-kicker">Sample Our Services copy · Fictional concept</div>
+<h2 id="servicesTitle">Practical solutions.<br><span style="color:var(--accent)">Meaningful progress.</span></h2>
+<p class="services-lead" id="servicesDescription">We provide professional solutions designed to help our clients grow, innovate, and succeed. Our services are tailored to meet your unique goals and deliver measurable results. <strong>This is sample website copy for a fictional brand; Northstar is not a real operating business and does not offer these services.</strong></p>
 <div class="services-grid">
-<article class="service-card"><span class="service-symbol" aria-hidden="true">✦</span><h3>Brand Strategy & Identity</h3><p>A hypothetical service example showing how brand positioning, messaging, and a visual identity could be presented.</p><div class="service-tags"><span>Positioning</span><span>Messaging</span><span>Visual direction</span></div></article>
-<article class="service-card"><span class="service-symbol" aria-hidden="true">⌘</span><h3>Website Design & Development</h3><p>A sample description of a responsive website service, included as placeholder content for this fictional brand.</p><div class="service-tags"><span>Landing pages</span><span>Business websites</span><span>Responsive UI</span></div></article>
-<article class="service-card"><span class="service-symbol" aria-hidden="true">↗</span><h3>Digital Presence & Content</h3><p>An illustrative example of how content planning and campaign design might appear on a service page.</p><div class="service-tags"><span>Content direction</span><span>Campaign concepts</span><span>Creative assets</span></div></article>
-<article class="service-card"><span class="service-symbol" aria-hidden="true">◎</span><h3>Growth & Optimization</h3><p>A sample description of digital optimization work, included for demonstration and not offered by a real company.</p><div class="service-tags"><span>SEO foundations</span><span>Performance</span><span>Measurement</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">✦</span><h3>Consulting &amp; Strategy</h3><p>Expert guidance to help you identify opportunities, solve challenges, and achieve your business objectives.</p><div class="service-tags"><span>Opportunity planning</span><span>Strategic direction</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">☷</span><h3>Project Management</h3><p>End-to-end project planning, coordination, and execution to ensure timely and successful delivery.</p><div class="service-tags"><span>Planning</span><span>Coordination</span><span>Delivery</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">⌘</span><h3>Digital Solutions</h3><p>Modern, scalable solutions that improve efficiency, enhance customer experiences, and support business growth.</p><div class="service-tags"><span>Digital tools</span><span>Customer experience</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">▤</span><h3>Business Support Services</h3><p>Reliable operational support to streamline processes, improve productivity, and drive performance.</p><div class="service-tags"><span>Operations</span><span>Productivity</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">◇</span><h3>Training &amp; Development</h3><p>Practical training programs and workshops designed to build skills, knowledge, and confidence.</p><div class="service-tags"><span>Skills</span><span>Workshops</span><span>Learning</span></div></article>
+<article class="service-card"><span class="service-symbol" aria-hidden="true">◎</span><h3>Ongoing Support</h3><p>Dedicated assistance and continuous improvement to help you maintain momentum and adapt to changing needs.</p><div class="service-tags"><span>Follow-through</span><span>Improvement</span></div></article>
 </div>
-<div class="services-bottom"><p><strong style="color:var(--text)">Fictional concept only.</strong><br>No real business, client work, or services are represented.</p><button class="services-cta" id="servicesCloseCta" type="button">Back to the demo <span aria-hidden="true">↗</span></button></div>
+<div class="services-bottom services-cta-area">
+<div class="services-cta-copy"><h3>Ready to Get Started?</h3><p>Let's work together to turn your goals into reality. Whether you're looking for expert guidance, innovative solutions, or a trusted partner for your next project, we're here to help.</p><p><strong>Contact us today for a free consultation and discover how we can support your success.</strong></p><small>Sample CTA copy only — this fictional concept has no real contact channel or consultation service.</small></div>
+<div class="services-cta-actions">
+<button class="services-cta sample-cta" type="button" data-cta="Get in Touch">🔹 Get in Touch</button>
+<button class="services-cta sample-cta" type="button" data-cta="Request a Consultation">🔹 Request a Consultation</button>
+<button class="services-cta sample-cta" type="button" data-cta="Start Your Project Today">🔹 Start Your Project Today</button>
+<button class="services-back" id="servicesCloseCta" type="button">Back to the demo <span aria-hidden="true">↗</span></button>
+</div>
+</div>
 </section>
 </div>
 <div class="about-overlay" id="aboutOverlay" hidden>
@@ -199,6 +222,7 @@ function openServices(event){if(event)event.preventDefault();lastServicesTrigger
 function closeServices(){servicesOverlay.hidden=true;document.body.style.overflow='';if(lastServicesTrigger&&typeof lastServicesTrigger.focus==='function')lastServicesTrigger.focus()}
 servicesLink.addEventListener('click',openServices);servicesClose.addEventListener('click',closeServices);
 document.getElementById('servicesCloseCta').addEventListener('click',closeServices);
+document.querySelectorAll('.sample-cta').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.cta+' is an example button only. Northstar is a fictional website concept.')));
 servicesOverlay.addEventListener('click',event=>{if(event.target===servicesOverlay)closeServices()});
 document.addEventListener('keydown',event=>{if(servicesOverlay.hidden)return;if(event.key==='Escape'){closeServices();return}if(event.key==='Tab'){const items=servicesPanel.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])');if(!items.length)return;const first=items[0],last=items[items.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}});
 const aboutLink=document.getElementById('aboutLink'),aboutOverlay=document.getElementById('aboutOverlay'),aboutPanel=document.getElementById('aboutPanel'),aboutClose=document.getElementById('aboutClose');let lastAboutTrigger=null;
