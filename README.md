@@ -32,3 +32,26 @@ The site is intended for GitHub Pages from the main branch. After committing cha
 ## Important note
 
 The CTA buttons demonstrate navigation within the concept website. There is no real contact form, email inbox, consultation service, analytics integration, or backend. Do not interpret the sample copy or mockups as real business claims or client work.
+
+
+## Live consultation and project requests
+
+The request form now writes to Cloud Firestore collection `consultationRequests`. The private request inbox is available at `/admin.html`. Both remain unavailable until the project's own Firebase configuration is added and the rules below are deployed.
+
+### One-time Firebase setup
+
+1. In Firebase Console, create a project and register a **Web app**. Copy its web configuration into `firebase-config.js`. This web config is public by design; never put a service-account private key in the website.
+2. In **Authentication → Sign-in method**, enable **Email/Password**. In **Authentication → Users**, create the administrator account. Use that exact email for `adminEmail` in `firebase-config.js`.
+3. Create a **Cloud Firestore** database.
+4. Open `firestore.rules`, replace `REPLACE_WITH_ADMIN_EMAIL` with the administrator email in the rules string, and publish those rules in Firebase Console → Firestore Database → Rules. The public can create validated requests, but cannot read or list the inbox.
+5. Commit the configured `firebase-config.js` to the site branch, wait for GitHub Pages to deploy, then open `https://tubalrr.github.io/Northstar-Business-Website/admin.html` and sign in.
+6. Test a request using the public site. It should appear in the private admin inbox as **New**. Use the inbox to change status, delete a request, or export the latest 100 requests as CSV.
+
+### What's included
+
+- Validated request submission with honest error handling (it never shows success when Firebase is not configured or the write fails).
+- Private admin sign-in using Firebase Authentication.
+- Firestore security rules limiting public access to creating valid request documents; reading and managing requests requires the configured admin email.
+- Request status tracking and CSV export from the inbox.
+
+**Important:** No project-specific Firebase credentials were provided for this repository, so `firebase-config.js` contains placeholders until its owner fills them in. Requests cannot be received before the Firebase steps above are completed. Email notifications are not enabled in this version; submissions go to the Firestore inbox.
