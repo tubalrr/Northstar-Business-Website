@@ -109,6 +109,18 @@ h1 span,.accent-text{color:var(--accent)}
 .faq-list{display:grid;gap:8px;margin-top:20px}.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--glass);overflow:hidden}
 .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px;font-weight:740;font-size:.84rem}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:"+";width:25px;height:25px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--accent);font-weight:500}.faq-item[open] summary:after{content:"−"}
 .faq-answer{margin:0;padding:0 16px 16px;color:var(--muted);font-size:.82rem;line-height:1.75}
+
+.why-section{margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.why-heading{max-width:720px}
+.why-heading h3{font-size:clamp(1.7rem,4vw,2.35rem);line-height:1.1;letter-spacing:-.055em;margin:12px 0 9px}
+.why-heading .modal-lead{font-size:.85rem}
+.why-grid{margin-top:19px}
+.why-grid .content-card{background:linear-gradient(145deg,rgba(198,243,107,.045),var(--glass))}
+.why-grid .content-card h3{font-size:.9rem}
+.value-strip{display:flex;align-items:center;justify-content:space-around;gap:12px;margin-top:18px;padding:15px 18px;border:1px solid rgba(198,243,107,.2);border-radius:15px;background:rgba(198,243,107,.045);color:var(--text);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.value-strip i{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.why-disclosure{margin:11px 0 0;color:var(--muted);font-size:.68rem;line-height:1.6}
+
 .contact-concept{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.65fr);gap:22px;align-items:start;margin-top:22px}
 .contact-status{padding:19px;border:1px solid var(--line);border-radius:17px;background:var(--glass)}.contact-status strong{display:block;font-size:.88rem}.contact-status p{margin:8px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
 .contact-actions{display:grid;gap:8px;margin-top:15px}.contact-actions button{justify-content:center;width:100%;min-height:42px;font-size:.78rem}
@@ -221,8 +233,26 @@ h1 span,.accent-text{color:var(--accent)}
    <article class="content-card"><span class="card-symbol" aria-hidden="true">◇</span><h3>Training &amp; Development</h3><p>Practical training programs and workshops designed to build skills, knowledge, and confidence.</p><div class="tags"><span class="tag">Skills</span><span class="tag">Workshops</span></div></article>
    <article class="content-card"><span class="card-symbol" aria-hidden="true">◎</span><h3>Ongoing Support</h3><p>Dedicated assistance and continuous improvement to help you maintain momentum and adapt to changing needs.</p><div class="tags"><span class="tag">Follow-through</span><span class="tag">Improvement</span></div></article>
   </div>
-  <div class="modal-banner"><strong>Ready to Get Started?</strong> In a real business website, this area could invite visitors to get in touch, request a consultation, or start a project. Here, those calls to action are concept examples only.</div>
-  <div class="actions"><button type="button" class="btn btn-primary" data-demo-cta="Get in Touch">Get in Touch</button><button type="button" class="btn btn-secondary" data-demo-cta="Request a Consultation">Request a Consultation</button><button type="button" class="btn btn-secondary" data-demo-cta="Start Your Project Today">Start Your Project Today</button></div>
+  <section class="why-section" aria-labelledby="whyTitle">
+   <div class="why-heading">
+    <div class="modal-kicker">The Northstar difference</div>
+    <h3 id="whyTitle">Built Around <span class="accent-text">Your Success.</span></h3>
+    <p class="modal-lead">Strategic thinking, reliable execution, and a clear focus on meaningful progress.</p>
+   </div>
+   <div class="modal-grid why-grid">
+    <article class="content-card"><span class="card-symbol" aria-hidden="true">↗</span><h3>Results-Driven Approach</h3><p>Focus on practical solutions designed to create measurable value and support long-term success.</p></article>
+    <article class="content-card"><span class="card-symbol" aria-hidden="true">◇</span><h3>Tailored Solutions</h3><p>Shape the approach around each project's goals, challenges, priorities, and vision.</p></article>
+    <article class="content-card"><span class="card-symbol" aria-hidden="true">✦</span><h3>Expertise You Can Trust</h3><p>Bring quality, innovation, and professionalism into every decision and deliverable.</p></article>
+    <article class="content-card"><span class="card-symbol" aria-hidden="true">◎</span><h3>Collaborative Partnership</h3><p>Keep communication clear and work collaboratively through each stage of a project.</p></article>
+    <article class="content-card"><span class="card-symbol" aria-hidden="true">⟳</span><h3>Continuous Support</h3><p>Build in review and improvement so the work can adapt as goals and needs change.</p></article>
+   </div>
+   <div class="value-strip" aria-label="Core principles">
+    <span>Strategy</span><i aria-hidden="true"></i><span>Innovation</span><i aria-hidden="true"></i><span>Execution</span><i aria-hidden="true"></i><span>Growth</span>
+   </div>
+   <p class="why-disclosure">Illustrative brand messaging for this website concept; these are not verified claims about a real company.</p>
+  </section>
+  <div class="modal-banner"><strong>Ready to take the next step?</strong> Explore the contact concept to preview how consultation and project inquiry options could fit this experience.</div>
+  <div class="actions"><button type="button" class="btn btn-primary" data-open-modal="contact">Get in Touch <span aria-hidden="true">↗</span></button><button type="button" class="btn btn-secondary" data-open-modal="contact">Request a Consultation</button><button type="button" class="btn btn-secondary" data-open-modal="contact">Start Your Project Today</button></div>
  </section>
 </div>
 
