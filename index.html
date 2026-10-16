@@ -302,17 +302,31 @@ h1 span,.accent-text{color:var(--accent)}
 
 <!-- Contact -->
 <div class="modal-overlay" id="contactModal" data-modal-panel="contact" hidden>
- <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
-  <button class="modal-close" type="button" data-close-modal aria-label="Close Get Started">×</button>
-  <div class="modal-kicker">Get started · Concept demo</div>
-  <h2 id="contactTitle">Ready for what's <span class="accent-text">next?</span></h2>
-  <p class="modal-lead">In a real business website, this would be the place to begin a conversation, request a consultation, or describe a project. Northstar is fictional, so these actions are examples only.</p>
+ <section class="modal-panel modal-wide" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close contact panel">×</button>
+  <div class="modal-kicker">The next step starts here</div>
+  <h2 id="contactTitle">Let's Build <span class="accent-text">What's Next.</span></h2>
+  <p class="modal-lead"><strong>Strategic thinking. Practical solutions. Lasting impact.</strong></p>
+  <p class="modal-lead" style="margin-top:13px">From initial planning to project delivery, we help turn ideas into opportunities and challenges into measurable results.</p>
   <div class="contact-concept">
-   <div>
-    <div class="about-copy"><p><strong style="color:var(--text)">Turn the idea into a plan.</strong></p><p>This layout demonstrates how a simple contact path could look when an actual business is ready to publish its verified contact details and inquiry process.</p></div>
+   <div class="about-copy">
+    <p><strong style="color:var(--text)">Let's turn your ideas into action.</strong></p>
+    <p>Every meaningful result begins with a clear goal. Explore the service concepts, choose a direction, and picture the next milestone for your project.</p>
+    <div class="actions" style="margin-top:20px">
+     <button class="btn btn-secondary" type="button" data-open-modal="services">Explore Our Services <span aria-hidden="true">↗</span></button>
+    </div>
    </div>
-   <aside class="contact-status"><strong>Contact channels are not configured.</strong><p>No real inbox, consultation service, or project intake system is connected. No information will be submitted or sent.</p><div class="contact-actions"><button class="btn btn-primary" type="button" data-demo-cta="Get in Touch">Get in Touch</button><button class="btn btn-secondary" type="button" data-demo-cta="Request a Consultation">Request a Consultation</button><button class="btn btn-secondary" type="button" data-demo-cta="Start Your Project Today">Start Your Project Today</button></div></aside>
+   <aside class="contact-status">
+    <strong>Start the Conversation</strong>
+    <p>Choose the next step that best fits your goals.</p>
+    <div class="contact-actions">
+     <button class="btn btn-primary" type="button" data-demo-cta="Book a Consultation">Book a Consultation <span aria-hidden="true">↗</span></button>
+     <button class="btn btn-secondary" type="button" data-open-modal="services">Explore Our Services</button>
+     <button class="btn btn-secondary" type="button" data-demo-cta="Contact Us">Contact Us</button>
+    </div>
+   </aside>
   </div>
+  <p class="about-side-note">Website concept preview. Booking and inquiry actions are not connected, and no message or request is sent.</p>
  </section>
 </div>
 
@@ -361,7 +375,7 @@ h1 span,.accent-text{color:var(--accent)}
   m.close.addEventListener('click',closeActiveModal);
   m.overlay.addEventListener('click',event=>{if(event.target===m.overlay)closeActiveModal()});
  });
- document.querySelectorAll('[data-demo-cta]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.demoCta+' is a sample button only. Northstar is a fictional concept; no request was sent.')));
+ document.querySelectorAll('[data-demo-cta]').forEach(button=>button.addEventListener('click',()=>showToast('This website preview is not connected to a live booking or inquiry system, so nothing was submitted.')));
  document.addEventListener('keydown',event=>{
   if(!activeModal)return;
   if(event.key==='Escape'){closeActiveModal();return}
