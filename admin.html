@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101914">
+<meta name="robots" content="noindex,nofollow">
+<title>Northstar — Admin Inbox</title>
+<link rel="icon" type="image/svg+xml" href="northstar-logo.svg">
+<style>
+:root{color-scheme:dark;--bg:#101914;--surface:#15211a;--surface2:#1a281f;--text:#f4f4ec;--muted:#b2bdb3;--accent:#c6f36b;--line:rgba(255,255,255,.14);--glass:rgba(255,255,255,.04);--shadow:0 28px 80px rgba(0,0,0,.25)}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 85% 0,rgba(124,168,87,.15),transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.header{border-bottom:1px solid var(--line);background:rgba(16,25,20,.8);backdrop-filter:blur(16px)}.header-inner{width:min(1180px,calc(100% - 40px));min-height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-size:1.08rem;font-weight:850;letter-spacing:-.04em}.brand img{width:38px;height:38px}.brand span span{color:var(--accent)}
+.pill{border:1px solid rgba(198,243,107,.26);border-radius:999px;padding:7px 11px;color:var(--accent);font-size:.7rem;letter-spacing:.09em;text-transform:uppercase}
+main{width:min(1180px,calc(100% - 40px));margin:34px auto 70px}.eyebrow{color:var(--accent);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(2.4rem,5.3vw,4.4rem);line-height:.98;letter-spacing:-.07em;margin:12px 0 12px}h1 span{color:var(--accent)}.lead{max-width:700px;color:var(--muted);font-size:.93rem;line-height:1.8;margin:0}
+.panel{margin-top:26px;padding:clamp(20px,4vw,32px);border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.035);backdrop-filter:blur(20px);box-shadow:var(--shadow)}
+.panel h2{margin:0 0 8px;font-size:1.4rem;letter-spacing:-.045em}.panel-lead{margin:0 0 21px;color:var(--muted);font-size:.83rem;line-height:1.7}
+.field{display:grid;gap:7px;margin-top:14px}.field label{font-size:.78rem;font-weight:750}.field input{width:100%;min-height:47px;padding:11px 13px;border:1px solid var(--line);border-radius:12px;background:var(--glass);color:var(--text)}.field input::placeholder{color:var(--muted)}
+.btn{min-height:45px;padding:0 17px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:999px;font-size:.81rem;font-weight:800;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--accent);color:#172014}.secondary{background:var(--glass);border-color:var(--line);color:var(--text)}.danger{background:rgba(255,100,100,.08);border-color:rgba(255,120,120,.3);color:#ffb9b9}.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.form-actions{margin-top:19px;display:flex;flex-wrap:wrap;gap:10px}.status{margin:14px 0 0;padding:12px 14px;border-radius:12px;font-size:.8rem;line-height:1.6;overflow-wrap:anywhere}.status[hidden]{display:none}.status.error{background:rgba(255,120,120,.08);border:1px solid rgba(255,120,120,.24);color:#ffcccc}.status.ok{background:rgba(198,243,107,.08);border:1px solid rgba(198,243,107,.23);color:var(--text)}.hint{color:var(--muted);font-size:.76rem;line-height:1.7;margin-top:15px}
+#inbox[hidden],#loginPanel[hidden]{display:none!important}
+.topline{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}.metric{padding:17px;border:1px solid var(--line);border-radius:16px;background:var(--glass)}.metric span{display:block;color:var(--muted);font-size:.73rem}.metric strong{display:block;margin-top:8px;font-size:1.9rem;letter-spacing:-.06em}
+.toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:24px}.toolbar h2{margin:0}.toolbar-right{display:flex;flex-wrap:wrap;gap:9px}
+.request-list{display:grid;gap:12px;margin-top:16px}.request-card{padding:19px;border:1px solid var(--line);border-radius:17px;background:var(--glass);min-width:0}.request-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;flex-wrap:wrap}.request-title{margin:0;font-size:1rem;overflow-wrap:anywhere}.request-meta{margin:6px 0 0;color:var(--muted);font-size:.76rem;line-height:1.6;overflow-wrap:anywhere}.badge{display:inline-flex;border:1px solid rgba(198,243,107,.25);color:var(--accent);border-radius:999px;padding:5px 9px;font-size:.67rem;text-transform:uppercase;letter-spacing:.05em}
+.request-body{margin-top:15px;padding:14px;border-radius:12px;background:rgba(0,0,0,.14);white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted);font-size:.84rem;line-height:1.75}.request-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:14px}.request-controls label{color:var(--muted);font-size:.75rem}.request-controls select{min-height:40px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);max-width:100%}.request-controls .btn{min-height:39px;padding:0 12px;font-size:.74rem}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:15px;text-align:center;color:var(--muted);line-height:1.7}.footer{color:var(--muted);font-size:.7rem;line-height:1.7;text-align:center;margin-top:27px}
+@media(max-width:760px){.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header-inner,main{width:calc(100% - 28px)}.request-controls select{flex:1}.request-head{gap:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="header"><div class="header-inner">
+ <a class="brand" href="./" aria-label="Northstar home"><img src="northstar-logo.svg" alt=""><span>northstar<span>.</span></span></a>
+ <span class="pill">Private admin area</span>
+</div></header>
+<main>
+ <div class="eyebrow">Northstar · Workspace</div>
+ <h1>Request <span>Inbox.</span></h1>
+ <p class="lead">Review consultation requests, general inquiries, and project starts submitted through the Northstar website. Sign in with the configured administrator account to access the private inbox.</p>
+
+ <section class="panel" id="setupPanel">
+  <h2>Connect the inbox</h2>
+  <p class="panel-lead">The Firebase project must be configured before requests can be saved or displayed. This page will not pretend that a submission succeeded while the backend is unavailable.</p>
+  <p class="status error" id="setupStatus" role="status">Checking Firebase configuration…</p>
+ </section>
+
+ <section class="panel" id="loginPanel" hidden>
+  <h2>Admin sign in</h2>
+  <p class="panel-lead">Use the administrator email and password created in Firebase Authentication. Public visitors cannot open the request list.</p>
+  <form id="loginForm">
+   <div class="field"><label for="adminEmailInput">Admin email</label><input id="adminEmailInput" type="email" name="email" autocomplete="username" required placeholder="admin@example.com"></div>
+   <div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" name="password" autocomplete="current-password" required minlength="6" placeholder="Your password"></div>
+   <div class="form-actions"><button type="submit" class="btn primary" id="loginButton">Sign In</button></div>
+  </form>
+  <p class="status error" id="loginStatus" role="status" hidden></p>
+  <p class="hint">For security, administrator accounts are created in Firebase Console, not through this public page.</p>
+ </section>
+
+ <section id="inbox" hidden>
+  <section class="panel">
+   <div class="topline"><div><h2>Your request overview</h2><p class="panel-lead" style="margin:7px 0 0">Requests are stored in Cloud Firestore. Only the configured administrator account can read them.</p></div><button class="btn secondary" id="signOutButton" type="button">Sign Out</button></div>
+   <div class="metric-grid">
+    <div class="metric"><span>Total requests loaded</span><strong id="totalCount">0</strong></div>
+    <div class="metric"><span>New</span><strong id="newCount">0</strong></div>
+    <div class="metric"><span>In progress</span><strong id="progressCount">0</strong></div>
+    <div class="metric"><span>Closed</span><strong id="closedCount">0</strong></div>
+   </div>
+   <p class="status error" id="inboxStatus" role="status" hidden></p>
+   <div class="toolbar"><h2>Latest requests</h2><div class="toolbar-right"><button type="button" class="btn secondary" id="refreshButton">Refresh</button><button type="button" class="btn secondary" id="exportButton">Export CSV</button></div></div>
+   <div class="request-list" id="requestList"><div class="empty">Loading requests…</div></div>
+   <p class="hint">The list displays the latest 100 requests. Export CSV to keep a local copy for follow-up. Keep this page private and sign out on shared devices.</p>
+  </section>
+ </section>
+ <p class="footer">Northstar concept website · Private request management</p>
+</main>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+import { getFirestore, collection, query, orderBy, limit, getDocs, doc, updateDoc, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+import { firebaseConfig, adminEmail, isFirebaseConfigured } from "./firebase-config.js";
+
+const setupStatus=document.getElementById("setupStatus");
+const loginPanel=document.getElementById("loginPanel");
+const setupPanel=document.getElementById("setupPanel");
+const inbox=document.getElementById("inbox");
+const loginForm=document.getElementById("loginForm");
+const loginStatus=document.getElementById("loginStatus");
+const inboxStatus=document.getElementById("inboxStatus");
+const loginButton=document.getElementById("loginButton");
+const requestList=document.getElementById("requestList");
+const allowedStatuses=["new","in progress","contacted","closed"];
+let auth=null,db=null,currentRequests=[];
+
+function showStatus(el,message,kind="error"){el.textContent=message;el.className="status "+kind;el.hidden=false}
+function clearStatus(el){el.textContent="";el.hidden=true}
+function firebaseMessage(error){
+ const code=error?.code||"";
+ if(code==="auth/invalid-credential"||code==="auth/wrong-password"||code==="auth/user-not-found")return "The email or password is incorrect.";
+ if(code==="auth/too-many-requests")return "Too many attempts. Try again later.";
+ if(code==="permission-denied"||code==="firestore/permission-denied")return "Access denied. Check that your signed-in email exactly matches the admin email in firebase-config.js and firestore.rules.";
+ if(code==="unavailable")return "Firebase is temporarily unavailable. Check your connection and try again.";
+ return error?.message||"Something went wrong. Please try again.";
+}
+function prettyDate(value){
+ if(!value)return "Just received";
+ if(typeof value.toDate==="function")return value.toDate().toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+ const d=new Date(value);return Number.isNaN(d.getTime())?"Date unavailable":d.toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+}
+function element(tag,className,text){
+ const node=document.createElement(tag);
+ if(className)node.className=className;
+ if(text!==undefined)node.textContent=text;
+ return node;
+}
+function updateMetrics(){
+ document.getElementById("totalCount").textContent=String(currentRequests.length);
+ document.getElementById("newCount").textContent=String(currentRequests.filter(r=>r.status==="new").length);
+ document.getElementById("progressCount").textContent=String(currentRequests.filter(r=>r.status==="in progress").length);
+ document.getElementById("closedCount").textContent=String(currentRequests.filter(r=>r.status==="closed").length);
+}
+function renderRequests(){
+ requestList.replaceChildren();
+ if(!currentRequests.length){requestList.append(element("div","empty","No requests have been received yet. New form submissions will appear here once Firebase is connected."));updateMetrics();return;}
+ for(const item of currentRequests){
+  const card=element("article","request-card");
+  const head=element("div","request-head");
+  const identity=element("div","");
+  identity.append(element("h3","request-title",item.name||"Unnamed visitor"));
+  identity.append(element("p","request-meta",(item.email||"No email")+" · "+(item.type||"General inquiry")));
+  identity.append(element("p","request-meta","Received "+prettyDate(item.createdAt)+(item.preferredDate?" · Preferred date: "+item.preferredDate:"")));
+  head.append(identity,element("span","badge",item.status||"new"));card.append(head);
+  const bodyText=(item.goals||"No additional project details provided.")+(item.source?"\n\nSource: "+item.source:"");
+  card.append(element("div","request-body",bodyText));
+  const controls=element("div","request-controls");
+  const label=element("label","","Status");const select=document.createElement("select");select.setAttribute("aria-label","Status for "+(item.name||"request"));
+  for(const s of allowedStatuses){const option=document.createElement("option");option.value=s;option.textContent=s[0].toUpperCase()+s.slice(1);select.append(option);}
+  select.value=allowedStatuses.includes(item.status)?item.status:"new";
+  const save=element("button","btn primary","Save status");save.type="button";
+  save.addEventListener("click",async()=>{
+   save.disabled=true;clearStatus(inboxStatus);
+   try{await updateDoc(doc(db,"consultationRequests",item.id),{status:select.value,updatedAt:serverTimestamp()});await loadRequests();showStatus(inboxStatus,"Request status updated.","ok");}
+   catch(error){showStatus(inboxStatus,firebaseMessage(error));}finally{save.disabled=false;}
+  });
+  const remove=element("button","btn danger","Delete");remove.type="button";
+  remove.addEventListener("click",async()=>{
+   if(!window.confirm("Permanently delete this request? This cannot be undone."))return;
+   remove.disabled=true;clearStatus(inboxStatus);
+   try{await deleteDoc(doc(db,"consultationRequests",item.id));await loadRequests();showStatus(inboxStatus,"Request deleted.","ok");}
+   catch(error){showStatus(inboxStatus,firebaseMessage(error));}finally{remove.disabled=false;}
+  });
+  controls.append(label,select,save,remove);card.append(controls);requestList.append(card);
+ }
+ updateMetrics();
+}
+async function loadRequests(){
+ clearStatus(inboxStatus);requestList.replaceChildren(element("div","empty","Loading requests…"));
+ try{
+  const q=query(collection(db,"consultationRequests"),orderBy("createdAt","desc"),limit(100));
+  const snapshot=await getDocs(q);
+  currentRequests=snapshot.docs.map(s=>({id:s.id,...s.data()}));
+  renderRequests();
+ }catch(error){
+  currentRequests=[];updateMetrics();requestList.replaceChildren(element("div","empty","Could not load the request inbox."));
+  showStatus(inboxStatus,firebaseMessage(error));
+ }
+}
+function csvEscape(value){return '"'+String(value??"").replace(/"/g,'""')+'"'}
+function exportCsv(){
+ const headers=["id","name","email","type","preferredDate","goals","status","createdAt"];
+ const rows=currentRequests.map(r=>headers.map(k=>csvEscape(k==="createdAt"?prettyDate(r[k]):r[k])).join(","));
+ const csv=[headers.join(","),...rows].join("\r\n");
+ const url=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8"}));
+ const a=document.createElement("a");a.href=url;a.download="northstar-requests.csv";a.click();URL.revokeObjectURL(url);
+}
+document.getElementById("refreshButton").addEventListener("click",loadRequests);
+document.getElementById("exportButton").addEventListener("click",exportCsv);
+document.getElementById("signOutButton").addEventListener("click",()=>signOut(auth));
+loginForm.addEventListener("submit",async event=>{
+ event.preventDefault();clearStatus(loginStatus);loginButton.disabled=true;loginButton.textContent="Signing in…";
+ try{await signInWithEmailAndPassword(auth,document.getElementById("adminEmailInput").value.trim(),document.getElementById("adminPassword").value);}
+ catch(error){showStatus(loginStatus,firebaseMessage(error));}
+ finally{loginButton.disabled=false;loginButton.textContent="Sign In";}
+});
+if(!isFirebaseConfigured()){
+ setupStatus.textContent="Firebase is not configured yet. Fill in firebase-config.js, create the admin account, and publish firestore.rules before accepting real requests.";
+}else{
+ try{
+  const app=initializeApp(firebaseConfig);auth=getAuth(app);db=getFirestore(app);
+  setupPanel.hidden=true;loginPanel.hidden=false;
+  onAuthStateChanged(auth,async user=>{
+   clearStatus(loginStatus);
+   if(!user){loginPanel.hidden=false;inbox.hidden=true;return;}
+   if((user.email||"").toLowerCase()!==adminEmail.toLowerCase()){
+    await signOut(auth);showStatus(loginStatus,"This account is not the configured administrator email.");return;
+   }
+   loginPanel.hidden=true;inbox.hidden=false;await loadRequests();
+  });
+ }catch(error){setupStatus.textContent="Firebase initialization failed: "+firebaseMessage(error);}
+}
+</script>
+</body>
+</html>
