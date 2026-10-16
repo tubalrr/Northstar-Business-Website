@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Northstar fictional brand concept</title>
+<desc id="desc">A premium dark green and gold concept graphic featuring a compass star and the words Northstar, Transforming Ideas Into Results, and Fictional Website Concept.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b120e"/><stop offset=".56" stop-color="#14231a"/><stop offset="1" stop-color="#101914"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0ad"/><stop offset=".35" stop-color="#e7bd58"/><stop offset=".72" stop-color="#a96b18"/><stop offset="1" stop-color="#ffe9a3"/></linearGradient>
+  <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#a6b0a8"/></linearGradient>
+  <radialGradient id="glow"><stop stop-color="#c6f36b" stop-opacity=".16"/><stop offset="1" stop-color="#c6f36b" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<ellipse cx="945" cy="96" rx="360" ry="290" fill="url(#glow)"/>
+<path d="M0 500 270 380 420 460 595 320 780 440 980 285 1200 380V630H0Z" fill="#18281d" opacity=".58"/>
+<path d="M0 546 250 444 415 510 610 376 795 490 985 350 1200 420" fill="none" stroke="#c6f36b" stroke-opacity=".15" stroke-width="2"/>
+<path d="M87 85H250M87 85V148M1113 482H950M1113 482V419" fill="none" stroke="#c6f36b" stroke-opacity=".38" stroke-width="2"/>
+<g transform="translate(167 238)">
+  <path d="M0 -84 13 -13 82 0 13 13 0 84 -13 13 -82 0 -13 -13Z" fill="url(#gold)"/>
+  <path d="M0 -53 7 -7 49 0 7 7 0 53 -7 7 -49 0 -7 -7Z" fill="#f7f1d8" opacity=".8"/>
+  <path d="M-25 34V-29H-12L21 8V-29H35V34H22L-11 -3V34Z" fill="#101914" opacity=".95"/>
+  <circle cx="0" cy="0" r="6" fill="#fff4c9"/>
+</g>
+<text x="285" y="225" fill="url(#silver)" font-family="Inter,Arial,sans-serif" font-size="92" font-weight="800" letter-spacing="-5">NORTH<tspan fill="url(#gold)">STAR</tspan></text>
+<rect x="291" y="252" width="176" height="4" rx="2" fill="url(#gold)"/>
+<text x="291" y="316" fill="#f4f4ec" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="650" letter-spacing="-1.4">Transforming Ideas Into Results.</text>
+<text x="292" y="362" fill="#b2bdb3" font-family="Inter,Arial,sans-serif" font-size="20" letter-spacing="2.5">A PREMIUM BRAND &amp; WEBSITE CONCEPT</text>
+<g transform="translate(292 438)">
+  <rect width="258" height="43" rx="21.5" fill="#c6f36b" fill-opacity=".09" stroke="#c6f36b" stroke-opacity=".45"/>
+  <circle cx="22" cy="21.5" r="4" fill="#c6f36b"/>
+  <text x="38" y="27" fill="#d9ffa1" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="2">FICTIONAL WEBSITE CONCEPT</text>
+</g>
+<text x="1110" y="578" fill="#b2bdb3" fill-opacity=".75" font-family="Inter,Arial,sans-serif" font-size="14" text-anchor="end" letter-spacing="2">northstar.</text>
+</svg>
