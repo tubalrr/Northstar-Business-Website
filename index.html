@@ -185,6 +185,7 @@ h1 span,.accent-text{color:var(--accent)}
 .form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:.75}
 .form-field select option{background:var(--surface);color:var(--text)}
 .booking-actions{margin-top:18px}
+.form-status{margin:14px 0 0;padding:12px 14px;border:1px solid rgba(255,120,120,.28);border-radius:12px;background:rgba(255,120,120,.07);color:var(--text);font-size:.8rem;line-height:1.65;overflow-wrap:anywhere}.form-status[hidden]{display:none}.form-status.success{border-color:rgba(198,243,107,.25);background:rgba(198,243,107,.06)}
 .booking-success{margin-top:23px;padding:24px;border:1px solid rgba(198,243,107,.25);border-radius:18px;background:linear-gradient(145deg,rgba(198,243,107,.08),var(--glass))}
 .booking-success[hidden]{display:none}
 .booking-success-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#172014;font-weight:900;font-size:1.2rem}
@@ -430,7 +431,7 @@ h1 span,.accent-text{color:var(--accent)}
   <div class="modal-kicker">Your next step</div>
   <h2 id="bookingTitle">Let's Talk <span class="accent-text">Possibilities.</span></h2>
   <p class="modal-lead" id="bookingLead">Share a few details to preview a consultation request.</p>
-  <div class="booking-disclosure"><strong>Interactive website preview.</strong> This form validates your entries in the browser only. It does not send, store, or book anything.</div>
+  <div class="booking-disclosure"><strong>Secure request form.</strong> Submissions are stored in Northstar's configured Firestore inbox. Do not include passwords or payment details. If the backend is not connected, the form will show an error instead of claiming it succeeded.</div>
   <form id="bookingForm" class="booking-form">
    <div class="form-grid">
     <div class="form-field"><label for="bookingName">Your name</label><input id="bookingName" name="name" autocomplete="name" required maxlength="90" placeholder="e.g. Alex Santos"></div>
@@ -440,16 +441,17 @@ h1 span,.accent-text{color:var(--accent)}
     <div class="form-field form-field-full"><label for="bookingGoals">Tell us about your goals</label><textarea id="bookingGoals" name="goals" rows="4" maxlength="1200" placeholder="What are you hoping to achieve?"></textarea></div>
    </div>
    <div class="actions booking-actions">
-    <button class="btn btn-primary" type="submit">Preview Request <span aria-hidden="true">↗</span></button>
+    <button class="btn btn-primary" type="submit" id="submitBooking">Submit Request <span aria-hidden="true">↗</span></button>
     <button class="btn btn-secondary" type="reset">Clear Form</button>
    </div>
   </form>
+  <p id="bookingFormStatus" class="form-status" role="status" aria-live="polite" hidden></p>
   <section id="bookingSuccess" class="booking-success" aria-live="polite" hidden>
    <div class="booking-success-icon" aria-hidden="true">✓</div>
-   <h3>Request Preview Ready</h3>
+   <h3>Request Received</h3>
    <p id="bookingSummary"></p>
-   <div class="modal-banner"><strong>Nothing was sent.</strong> This is a local demo confirmation, not a real booking or submitted inquiry. Connect a verified email or booking service before using this on a live business site.</div>
-   <button type="button" class="btn btn-secondary" id="editBooking">Edit Request</button>
+   <div class="modal-banner"><strong>Next step:</strong> Your request is now in the Northstar admin inbox. Keep the reference ID shown above for your records.</div>
+   <button type="button" class="btn btn-secondary" id="editBooking">Submit Another Request</button>
   </section>
  </section>
 </div>
@@ -512,29 +514,14 @@ h1 span,.accent-text{color:var(--accent)}
  
  const bookingForm=document.getElementById('bookingForm');
  const bookingSuccess=document.getElementById('bookingSuccess');
- const bookingSummary=document.getElementById('bookingSummary');
+ const bookingStatus=document.getElementById('bookingFormStatus');
  const editBooking=document.getElementById('editBooking');
  if(bookingForm){
-  bookingForm.addEventListener('submit',event=>{
-   event.preventDefault();
-   if(!bookingForm.reportValidity())return;
-   const data=new FormData(bookingForm);
-   const lines=[
-    'Name: '+String(data.get('name')||'').trim(),
-    'Email: '+String(data.get('email')||'').trim(),
-    'Request: '+String(data.get('type')||'').trim(),
-    'Preferred date: '+(String(data.get('date')||'').trim()||'Not specified'),
-    'Goals: '+(String(data.get('goals')||'').trim()||'Not provided')
-   ];
-   bookingSummary.textContent=lines.join('\\n');
-   bookingForm.hidden=true;bookingSuccess.hidden=false;
-   bookingSuccess.querySelector('h3').focus?.();
-  });
   bookingForm.addEventListener('reset',()=>{
    window.setTimeout(()=>{const date=document.getElementById('bookingDate');if(date)date.min=new Date().toISOString().slice(0,10)},0);
   });
  }
- if(editBooking)editBooking.addEventListener('click',()=>{bookingSuccess.hidden=true;bookingForm.hidden=false;document.getElementById('bookingName').focus()});
+ if(editBooking)editBooking.addEventListener('click',()=>{bookingSuccess.hidden=true;bookingForm.hidden=false;bookingForm.reset();if(bookingStatus){bookingStatus.hidden=true;bookingStatus.textContent=''}document.getElementById('bookingName').focus()});
 
  document.addEventListener('keydown',event=>{
   if(!activeModal)return;
@@ -565,5 +552,74 @@ h1 span,.accent-text{color:var(--accent)}
  parallax();
 })();
 </script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+import { firebaseConfig, isFirebaseConfigured } from "./firebase-config.js";
+
+const form=document.getElementById("bookingForm");
+const formStatus=document.getElementById("bookingFormStatus");
+const success=document.getElementById("bookingSuccess");
+const summary=document.getElementById("bookingSummary");
+const submitButton=document.getElementById("submitBooking");
+const nameInput=document.getElementById("bookingName");
+const emailInput=document.getElementById("bookingEmail");
+const typeInput=document.getElementById("bookingType");
+const dateInput=document.getElementById("bookingDate");
+const goalsInput=document.getElementById("bookingGoals");
+
+function showFormStatus(message,kind="error"){
+ formStatus.textContent=message;
+ formStatus.className="form-status"+(kind==="success"?" success":"");
+ formStatus.hidden=false;
+}
+function firebaseErrorMessage(error){
+ if(error?.code==="permission-denied"||error?.code==="firestore/permission-denied")return "The request could not be saved because Firestore rejected it. Check that the deployed Firestore rules match firestore.rules in the repository.";
+ if(error?.code==="unavailable")return "The request service is temporarily unavailable. Please try again.";
+ if(error?.code==="failed-precondition")return "The request service is not fully set up yet. Check the Firebase Console configuration.";
+ return "We couldn't submit the request. Please check your connection and Firebase setup, then try again.";
+}
+let db=null;
+if(isFirebaseConfigured()){
+ try{db=getFirestore(initializeApp(firebaseConfig));}
+ catch(error){console.error("Firebase initialization failed",error);}
+}
+form.addEventListener("submit",async event=>{
+ event.preventDefault();
+ if(!form.reportValidity())return;
+ if(!db){
+  showFormStatus("Requests are not being accepted yet because Firebase has not been configured. Please contact the site owner; nothing was submitted.");
+  return;
+ }
+ const name=nameInput.value.trim();
+ const email=emailInput.value.trim();
+ const type=typeInput.value;
+ const preferredDate=dateInput.value||"";
+ const goals=goalsInput.value.trim();
+ if(name.length<1||name.length>90||email.length>160||goals.length>1200){
+  showFormStatus("Please check your name, email, and project details, then submit again.");return;
+ }
+ submitButton.disabled=true;
+ submitButton.textContent="Submitting…";
+ formStatus.hidden=true;
+ try{
+  const docRef=await addDoc(collection(db,"consultationRequests"),{
+   name,email,type,preferredDate,goals,status:"new",source:"northstar-website",createdAt:serverTimestamp()
+  });
+  summary.textContent="Your request has been saved. Reference ID: "+docRef.id+". The Northstar team can review it in the private admin inbox.";
+  form.hidden=true;
+  success.hidden=false;
+  showFormStatus("Request submitted successfully.", "success");
+ }catch(error){
+  console.error("Could not submit Northstar request",error);
+  showFormStatus(firebaseErrorMessage(error));
+ }finally{
+  submitButton.disabled=false;
+  submitButton.innerHTML='Submit Request <span aria-hidden="true">↗</span>';
+ }
+});
+</script>
+
 </body>
 </html>
