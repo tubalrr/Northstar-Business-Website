@@ -38,7 +38,7 @@ service cloud.firestore {
         && request.resource.data.createdAt == request.time;
 
       // Only the explicitly configured admin account can access the inbox.
-      allow read, list: if isNorthstarAdmin();
+      allow read: if isNorthstarAdmin();
 
       // Admin can update only the status field and its server timestamp.
       allow update: if isNorthstarAdmin()
