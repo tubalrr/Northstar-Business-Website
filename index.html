@@ -58,6 +58,46 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{
 .hero:after{content:"";position:absolute;z-index:-1;inset:-8% -5%;pointer-events:none;opacity:.19;background-image:radial-gradient(circle at 12% 28%,rgba(216,255,178,.85) 0 1px,transparent 1.8px),radial-gradient(circle at 78% 67%,rgba(216,255,178,.7) 0 1px,transparent 1.8px),radial-gradient(circle at 45% 82%,rgba(216,255,178,.6) 0 1px,transparent 1.8px);background-size:190px 180px,240px 220px,280px 260px;animation:particleDrift 34s linear infinite}
 @keyframes auroraDrift{from{transform:translate3d(-1.5%,0,0) scale(1);background-position:0% 45%}to{transform:translate3d(1.5%,-1%,0) scale(1.06);background-position:100% 55%}}
 @keyframes particleDrift{from{background-position:0 0,0 0,0 0}to{background-position:190px -180px,-240px 220px,280px -260px}}
+
+/* Visible, premium motion: staggered entrance, floating glass, animated metrics and aurora */
+.hero-copy .eyebrow,.hero-copy .hero-title,.hero-copy .hero-tagline,.hero-copy .demo-notice,.hero-copy .actions,.hero-copy .hero-proof{opacity:0;animation:heroEnter .78s cubic-bezier(.2,.75,.25,1) forwards}
+.hero-copy .eyebrow{animation-delay:.08s}
+.hero-copy .hero-title{animation-delay:.2s}
+.hero-copy .hero-tagline{animation-delay:.34s}
+.hero-copy .demo-notice{animation-delay:.48s}
+.hero-copy .actions{animation-delay:.6s}
+.hero-copy .hero-proof{animation-delay:.72s}
+@keyframes heroEnter{from{opacity:0;transform:translate3d(0,24px,0);filter:blur(5px)}to{opacity:1;transform:translate3d(0,0,0);filter:blur(0)}}
+.hero-visual:before{content:"";position:absolute;width:min(104%,510px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(198,243,107,.15);background:repeating-conic-gradient(from 0deg,rgba(198,243,107,.10) 0deg 1deg,transparent 1deg 22deg);mask-image:radial-gradient(circle,transparent 57%,black 57.5%,black 58%,transparent 58.5%);animation:orbitTurn 48s linear infinite;pointer-events:none}
+.hero-visual:after{content:"";position:absolute;width:min(90%,410px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(190,255,70,.14),rgba(86,143,61,.07) 42%,transparent 70%);filter:blur(22px);animation:glowBreathe 7s ease-in-out infinite;pointer-events:none;z-index:-1}
+@keyframes orbitTurn{to{transform:rotate(360deg)}}
+@keyframes glowBreathe{0%,100%{opacity:.48;transform:scale(.92)}50%{opacity:1;transform:scale(1.09)}}
+.dashboard{animation:dashboardFloat 7s ease-in-out infinite}
+@keyframes dashboardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.step-track i{width:0;animation:barGrow 1.35s cubic-bezier(.2,.7,.2,1) forwards}
+.dash-step:nth-child(1) .step-track i{animation-delay:.55s}
+.dash-step:nth-child(2) .step-track i{animation-delay:.72s}
+.dash-step:nth-child(3) .step-track i{animation-delay:.89s}
+.dash-step:nth-child(4) .step-track i{animation-delay:1.06s}
+@keyframes barGrow{to{width:var(--w)}}
+.dash-status:before{box-shadow:0 0 0 0 rgba(198,243,107,.45);animation:statusPulse 2.1s ease-out infinite}
+@keyframes statusPulse{0%{box-shadow:0 0 0 0 rgba(198,243,107,.45)}70%,100%{box-shadow:0 0 0 8px rgba(198,243,107,0)}}
+.floating-note{animation:noteBob 5s ease-in-out infinite}
+@keyframes noteBob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(-1deg)}}
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary:after{content:"";position:absolute;inset:-40% auto -40% -70%;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);transform:skewX(-20deg);animation:buttonShine 5.8s ease-in-out infinite;pointer-events:none}
+@keyframes buttonShine{0%,62%{left:-70%}84%,100%{left:140%}}
+.modal-overlay:not([hidden]) .modal-panel{animation:modalArrive .32s cubic-bezier(.2,.8,.2,1) both}
+@keyframes modalArrive{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.site-nav a{position:relative}
+.site-nav a:after{content:"";position:absolute;left:0;right:0;bottom:3px;height:1px;transform:scaleX(0);transform-origin:left;background:var(--accent);transition:transform .22s ease}
+.site-nav a:hover:after,.site-nav a:focus-visible:after{transform:scaleX(1)}
+@media(prefers-reduced-motion:reduce){
+ .hero-copy .eyebrow,.hero-copy .hero-title,.hero-copy .hero-tagline,.hero-copy .demo-notice,.hero-copy .actions,.hero-copy .hero-proof{opacity:1;animation:none;filter:none;transform:none}
+ .hero:before,.hero:after,.hero-visual:before,.hero-visual:after,.dashboard,.step-track i,.dash-status:before,.floating-note,.btn-primary:after,.modal-overlay:not([hidden]) .modal-panel{animation:none!important}
+ .step-track i{width:var(--w)}
+}
+
 .eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
 h1.hero-title{margin:22px 0 0;max-width:760px;font-size:clamp(4rem,8vw,8rem);font-weight:800;line-height:.9;letter-spacing:-.05em}
 h1 span,.accent-text{color:var(--accent)}
