@@ -172,6 +172,26 @@ h1 span,.accent-text{color:var(--accent)}
 .contact-concept{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.65fr);gap:22px;align-items:start;margin-top:22px}
 .contact-status{padding:19px;border:1px solid var(--line);border-radius:17px;background:var(--glass)}.contact-status strong{display:block;font-size:.88rem}.contact-status p{margin:8px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
 .contact-actions{display:grid;gap:8px;margin-top:15px}.contact-actions button{justify-content:center;width:100%;min-height:42px;font-size:.78rem}
+
+.booking-disclosure{margin-top:18px;padding:13px 15px;border:1px solid rgba(198,243,107,.23);border-radius:13px;background:rgba(198,243,107,.045);color:var(--muted);font-size:.78rem;line-height:1.65}
+.booking-disclosure strong{color:var(--text)}
+.booking-form{margin-top:21px}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.form-field{display:grid;gap:7px;min-width:0}
+.form-field-full{grid-column:1/-1}
+.form-field label{font-size:.78rem;font-weight:750;color:var(--text)}
+.form-field input,.form-field select,.form-field textarea{width:100%;min-height:45px;border:1px solid var(--line);border-radius:12px;background:var(--glass);color:var(--text);padding:11px 12px;font:inherit;font-size:.84rem;outline-offset:3px}
+.form-field textarea{resize:vertical;min-height:110px;line-height:1.6}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--muted);opacity:.75}
+.form-field select option{background:var(--surface);color:var(--text)}
+.booking-actions{margin-top:18px}
+.booking-success{margin-top:23px;padding:24px;border:1px solid rgba(198,243,107,.25);border-radius:18px;background:linear-gradient(145deg,rgba(198,243,107,.08),var(--glass))}
+.booking-success[hidden]{display:none}
+.booking-success-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#172014;font-weight:900;font-size:1.2rem}
+.booking-success h3{font-size:1.25rem;margin:14px 0 7px;letter-spacing:-.03em}
+.booking-success p{color:var(--muted);font-size:.86rem;line-height:1.75;overflow-wrap:anywhere;white-space:pre-line}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}.form-field-full{grid-column:auto}}
+
 .toast{position:fixed;left:50%;bottom:22px;z-index:100;max-width:calc(100vw - 30px);padding:12px 16px;border:1px solid var(--line);border-radius:13px;background:var(--surface2);color:var(--text);box-shadow:var(--shadow);font-size:.8rem;line-height:1.55;text-align:center;transform:translate(-50%,14px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:1050px){
@@ -393,13 +413,44 @@ h1 span,.accent-text{color:var(--accent)}
     <strong>Start the Conversation</strong>
     <p>Choose the next step that best fits your goals.</p>
     <div class="contact-actions">
-     <button class="btn btn-primary" type="button" data-demo-cta="Book a Consultation">Book a Consultation <span aria-hidden="true">↗</span></button>
-     <button class="btn btn-secondary" type="button" data-demo-cta="Contact Us">Contact Us</button>
-     <button class="btn btn-secondary" type="button" data-demo-cta="Start Your Project">Start Your Project</button>
+     <button class="btn btn-primary" type="button" data-open-modal="booking" data-request-type="consultation">Book a Consultation <span aria-hidden="true">↗</span></button>
+     <button class="btn btn-secondary" type="button" data-open-modal="booking" data-request-type="contact">Contact Us</button>
+     <button class="btn btn-secondary" type="button" data-open-modal="booking" data-request-type="project">Start Your Project</button>
     </div>
    </aside>
   </div>
   <p class="about-side-note">Concept preview only: booking and inquiry actions are not connected to a live service. No request or message is sent.</p>
+ </section>
+</div>
+
+<!-- Booking / inquiry form demo -->
+<div class="modal-overlay" id="bookingModal" data-modal-panel="booking" hidden>
+ <section class="modal-panel modal-wide" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close request form">×</button>
+  <div class="modal-kicker">Your next step</div>
+  <h2 id="bookingTitle">Let's Talk <span class="accent-text">Possibilities.</span></h2>
+  <p class="modal-lead" id="bookingLead">Share a few details to preview a consultation request.</p>
+  <div class="booking-disclosure"><strong>Interactive website preview.</strong> This form validates your entries in the browser only. It does not send, store, or book anything.</div>
+  <form id="bookingForm" class="booking-form">
+   <div class="form-grid">
+    <div class="form-field"><label for="bookingName">Your name</label><input id="bookingName" name="name" autocomplete="name" required maxlength="90" placeholder="e.g. Alex Santos"></div>
+    <div class="form-field"><label for="bookingEmail">Email address</label><input id="bookingEmail" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="you@example.com"></div>
+    <div class="form-field"><label for="bookingType">What do you need?</label><select id="bookingType" name="type" required><option value="Consultation">Book a consultation</option><option value="General inquiry">General inquiry</option><option value="New project">Start a project</option><option value="Website / digital concept">Website or digital concept</option><option value="Business strategy">Business strategy</option><option value="Other">Something else</option></select></div>
+    <div class="form-field"><label for="bookingDate">Preferred date (optional)</label><input id="bookingDate" name="date" type="date"></div>
+    <div class="form-field form-field-full"><label for="bookingGoals">Tell us about your goals</label><textarea id="bookingGoals" name="goals" rows="4" maxlength="1200" placeholder="What are you hoping to achieve?"></textarea></div>
+   </div>
+   <div class="actions booking-actions">
+    <button class="btn btn-primary" type="submit">Preview Request <span aria-hidden="true">↗</span></button>
+    <button class="btn btn-secondary" type="reset">Clear Form</button>
+   </div>
+  </form>
+  <section id="bookingSuccess" class="booking-success" aria-live="polite" hidden>
+   <div class="booking-success-icon" aria-hidden="true">✓</div>
+   <h3>Request Preview Ready</h3>
+   <p id="bookingSummary"></p>
+   <div class="modal-banner"><strong>Nothing was sent.</strong> This is a local demo confirmation, not a real booking or submitted inquiry. Connect a verified email or booking service before using this on a live business site.</div>
+   <button type="button" class="btn btn-secondary" id="editBooking">Edit Request</button>
+  </section>
  </section>
 </div>
 
@@ -440,7 +491,17 @@ h1 span,.accent-text{color:var(--accent)}
  function openModal(key,trigger){
   const target=modalPairs.find(m=>m.key===key);if(!target)return;
   closeMenu();if(activeModal)activeModal.overlay.hidden=true;
-  lastFocus=trigger||document.activeElement;activeModal=target;target.overlay.hidden=false;body.style.overflow='hidden';target.close.focus();
+  lastFocus=trigger||document.activeElement;activeModal=target;target.overlay.hidden=false;body.style.overflow='hidden';
+  if(key==='booking'){
+   const mode=trigger&&trigger.dataset.requestType;
+   const type=document.getElementById('bookingType'),lead=document.getElementById('bookingLead');
+   if(type&&mode){type.value=mode==='project'?'New project':mode==='contact'?'General inquiry':'Consultation';}
+   if(lead){lead.textContent=mode==='project'?'Tell us a little about the project you have in mind.':mode==='contact'?'Share what you would like to ask about.':'Share a few details to preview a consultation request.';}
+   const form=document.getElementById('bookingForm'),success=document.getElementById('bookingSuccess');
+   if(form)form.hidden=false;if(success)success.hidden=true;
+   const date=document.getElementById('bookingDate');if(date)date.min=new Date().toISOString().slice(0,10);
+  }
+  target.close.focus();
  }
  document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',event=>{event.preventDefault();openModal(el.dataset.modal,el)}));
  document.querySelectorAll('[data-open-modal]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.openModal,el)));
@@ -448,7 +509,33 @@ h1 span,.accent-text{color:var(--accent)}
   m.close.addEventListener('click',closeActiveModal);
   m.overlay.addEventListener('click',event=>{if(event.target===m.overlay)closeActiveModal()});
  });
- document.querySelectorAll('[data-demo-cta]').forEach(button=>button.addEventListener('click',()=>showToast('This website preview is not connected to a live booking or inquiry system, so nothing was submitted.')));
+ 
+ const bookingForm=document.getElementById('bookingForm');
+ const bookingSuccess=document.getElementById('bookingSuccess');
+ const bookingSummary=document.getElementById('bookingSummary');
+ const editBooking=document.getElementById('editBooking');
+ if(bookingForm){
+  bookingForm.addEventListener('submit',event=>{
+   event.preventDefault();
+   if(!bookingForm.reportValidity())return;
+   const data=new FormData(bookingForm);
+   const lines=[
+    'Name: '+String(data.get('name')||'').trim(),
+    'Email: '+String(data.get('email')||'').trim(),
+    'Request: '+String(data.get('type')||'').trim(),
+    'Preferred date: '+(String(data.get('date')||'').trim()||'Not specified'),
+    'Goals: '+(String(data.get('goals')||'').trim()||'Not provided')
+   ];
+   bookingSummary.textContent=lines.join('\\n');
+   bookingForm.hidden=true;bookingSuccess.hidden=false;
+   bookingSuccess.querySelector('h3').focus?.();
+  });
+  bookingForm.addEventListener('reset',()=>{
+   window.setTimeout(()=>{const date=document.getElementById('bookingDate');if(date)date.min=new Date().toISOString().slice(0,10)},0);
+  });
+ }
+ if(editBooking)editBooking.addEventListener('click',()=>{bookingSuccess.hidden=true;bookingForm.hidden=false;document.getElementById('bookingName').focus()});
+
  document.addEventListener('keydown',event=>{
   if(!activeModal)return;
   if(event.key==='Escape'){closeActiveModal();return}
