@@ -40,6 +40,9 @@ body.light .about-overlay{background:rgba(20,30,20,.42)}
 .about-kicker{color:var(--accent);font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
 .about-panel h2{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.065em;line-height:1.02;margin:15px 46px 14px 0}
 .about-lead{color:var(--muted);font-size:1rem;line-height:1.75;margin:0;max-width:540px}
+.about-copy{color:var(--muted);font-size:.98rem;line-height:1.85;max-width:680px}
+.about-copy p{margin:0 0 16px}.about-copy p:last-child{margin-bottom:0}
+.about-tagline{margin:24px 0 0;padding:18px 20px;border:1px solid rgba(198,243,107,.28);border-radius:16px;background:rgba(198,243,107,.06);color:var(--accent);font-size:.94rem;line-height:1.6}
 .about-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
 .about-item{padding:17px;border:1px solid var(--line);border-radius:18px;background:var(--glass)}
 .about-item .about-symbol{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:rgba(198,243,107,.14);color:var(--accent);font-size:1.05rem}
@@ -143,15 +146,13 @@ body.light .approach-overlay{background:rgba(20,30,20,.42)}
 <div class="about-overlay" id="aboutOverlay" hidden>
 <section class="about-panel" id="aboutPanel" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" aria-describedby="aboutDescription" tabindex="-1">
 <button class="about-close" id="aboutClose" type="button" aria-label="Close About window">×</button>
-<div class="about-kicker">About this design demo</div>
-<h2 id="aboutTitle">A fictional brand.<br><span style="color:var(--accent)">A visual direction.</span></h2>
-<p class="about-lead" id="aboutDescription">Northstar is a fictional brand concept created to explore a premium visual identity and business website layout. It does not represent an operating company, have real clients, or offer services.</p>
-<div class="about-grid">
-<article class="about-item"><span class="about-symbol" aria-hidden="true">✦</span><h3>Brand direction</h3><p>A fictional identity exploring a premium look built around a compass-inspired mark and dark green palette.</p></article>
-<article class="about-item"><span class="about-symbol" aria-hidden="true">↗</span><h3>Clear structure</h3><p>A sample layout showing how a business concept might organize its headline, service cards, and content.</p></article>
-<article class="about-item"><span class="about-symbol" aria-hidden="true">◇</span><h3>Visual system</h3><p>Gold accents, metallic logo artwork, spacious cards, and responsive styling create a cohesive visual direction.</p></article>
-<article class="about-item"><span class="about-symbol" aria-hidden="true">◎</span><h3>Experience demo</h3><p>Interactions and responsive behavior are included to demonstrate the website experience, not a live company platform.</p></article>
+<div class="about-kicker">Sample About Us copy · Fictional concept</div>
+<h2 id="aboutTitle">About <span style="color:var(--accent)">Us.</span></h2>
+<div class="about-copy" id="aboutDescription">
+<p>We help businesses and individuals turn ideas into impactful results. Through innovation, expertise, and a commitment to excellence, we deliver solutions that are practical, effective, and tailored to our clients' unique needs.</p>
+<p>Our approach is built on collaboration, transparency, and continuous improvement. We take the time to understand your goals, develop strategies that work, and provide the support needed to achieve lasting success.</p>
 </div>
+<p class="about-tagline"><strong>Driven by quality. Focused on results. Committed to your success.</strong></p>
 <div class="about-foot"><strong>Northstar · Fictional concept</strong><span>Portfolio-style website demo</span></div>
 </section>
 </div>
