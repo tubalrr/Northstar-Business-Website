@@ -4,585 +4,389 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101914" id="themeColorMeta">
-<meta name="description" content="Northstar is a fictional business website design concept exploring premium branding, sample services, and a polished digital experience. It is not an operating business.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Northstar is a fictional brand and single-screen website concept showcasing premium design, sample services, portfolio explorations, and a polished responsive experience.">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://tubalrr.github.io/Northstar-Business-Website/">
 <link rel="icon" type="image/svg+xml" href="northstar-logo.svg">
-<title>Northstar — Transforming Ideas Into Results | Fictional Brand Concept</title>
+<title>Northstar — Your Goals. Our Expertise. Real Results. | Concept Demo</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Northstar — Fictional Brand Concept">
-<meta property="og:title" content="Northstar — Transforming Ideas Into Results">
-<meta property="og:description" content="A premium fictional brand and website concept. Explore sample services, project formats, and a polished digital design.">
+<meta property="og:title" content="Northstar — Your Goals. Our Expertise. Real Results.">
+<meta property="og:description" content="A premium single-screen fictional brand and website design concept. No real business or services are represented.">
 <meta property="og:url" content="https://tubalrr.github.io/Northstar-Business-Website/">
 <meta property="og:image" content="https://tubalrr.github.io/Northstar-Business-Website/northstar-social-card.svg">
 <meta property="og:image:type" content="image/svg+xml">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Northstar fictional brand concept on a dark green background with a gold compass star.">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Northstar fictional concept brand with a gold compass star on a dark green background.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Northstar — Transforming Ideas Into Results">
-<meta name="twitter:description" content="A premium fictional brand and website concept. No real business or services are represented.">
+<meta name="twitter:title" content="Northstar — Fictional Brand Concept">
+<meta name="twitter:description" content="A premium single-screen website concept, with sections opened in focused containers.">
 <meta name="twitter:image" content="https://tubalrr.github.io/Northstar-Business-Website/northstar-social-card.svg">
 <style>
-:root{
-  color-scheme:dark;
-  --bg:#101914;--surface:#15211a;--surface-2:#1a281f;--text:#f4f4ec;--muted:#b2bdb3;
-  --accent:#c6f36b;--line:rgba(255,255,255,.14);--glass:rgba(255,255,255,.055);
-  --shadow:0 30px 90px rgba(0,0,0,.24);--max:1180px;
-}
+:root{color-scheme:dark;--bg:#101914;--surface:#15211a;--surface2:#1a281f;--text:#f4f4ec;--muted:#b2bdb3;--accent:#c6f36b;--line:rgba(255,255,255,.14);--glass:rgba(255,255,255,.055);--shadow:0 30px 90px rgba(0,0,0,.32);--max:1300px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 78% 5%,rgba(124,168,87,.15),transparent 34%),radial-gradient(ellipse at 8% 54%,rgba(57,101,81,.12),transparent 36%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden;line-height:1.5;transition:background .3s,color .3s}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 88%);transform:translate3d(0,var(--grid-parallax,0px),0)}
-body.light{color-scheme:light;--bg:#f3f5ec;--surface:#fff;--surface-2:#edf1e7;--text:#1c281d;--muted:#5f6b61;--line:rgba(24,43,27,.16);--glass:rgba(255,255,255,.7);--shadow:0 30px 90px rgba(34,52,34,.12);background:radial-gradient(ellipse at 78% 5%,rgba(153,193,91,.2),transparent 34%),#f3f5ec}
-body.light .site-header{background:rgba(243,245,236,.84)}
-body.light .dashboard,body.light .project-art{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(255,255,255,.7))}
-body.light .floating-note{background:#fff;color:var(--text)}
-body.light .tag{background:rgba(24,43,27,.04)}
-a{color:inherit;text-decoration:none}
-button,input,textarea,select{font:inherit}
-button{color:inherit}
-img,svg{max-width:100%}
-::selection{background:var(--accent);color:#172014}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 79% 22%,rgba(124,168,87,.16),transparent 34%),radial-gradient(ellipse at 5% 90%,rgba(57,101,81,.13),transparent 37%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden;transition:background .3s,color .3s}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 88%);transform:translate3d(0,var(--grid-parallax,0px),0)}
+body.light{color-scheme:light;--bg:#f3f5ec;--surface:#fff;--surface2:#edf1e7;--text:#1c281d;--muted:#5f6b61;--line:rgba(24,43,27,.16);--glass:rgba(255,255,255,.74);--shadow:0 30px 90px rgba(34,52,34,.14);background:radial-gradient(ellipse at 79% 20%,rgba(153,193,91,.23),transparent 35%),#f3f5ec}
+body.light .site-header{background:rgba(243,245,236,.82)}body.light .dashboard,body.light .modal-panel{background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(255,255,255,.78))}body.light .floating-note{background:#fff;color:var(--text)}body.light .project-art{background:linear-gradient(145deg,#fff,#eef2e8)}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}button,a{-webkit-tap-highlight-color:transparent}img,svg{max-width:100%}::selection{background:var(--accent);color:#172014}
 :focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-.skip-link{position:fixed;top:10px;left:10px;z-index:100;transform:translateY(-160%);background:var(--accent);color:#172014;font-weight:800;padding:11px 15px;border-radius:12px}
-.skip-link:focus{transform:translateY(0)}
-.container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
-.site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(16,25,20,.84);backdrop-filter:blur(18px)}
-.header-inner{width:min(1320px,calc(100% - 48px));min-height:82px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:11px;font-size:1.12rem;font-weight:780;letter-spacing:-.045em;flex-shrink:0}
+.skip-link{position:fixed;top:10px;left:10px;z-index:100;transform:translateY(-160%);background:var(--accent);color:#172014;font-weight:800;padding:11px 15px;border-radius:12px}.skip-link:focus{transform:translateY(0)}
+.site-header{position:relative;z-index:20;border-bottom:1px solid var(--line);background:rgba(16,25,20,.68);backdrop-filter:blur(18px)}
+.header-inner{width:min(var(--max),calc(100% - 64px));min-height:78px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;font-size:1.12rem;font-weight:800;letter-spacing:-.045em;flex-shrink:0}
 .brand-mark{width:42px;height:42px;display:block;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(198,243,107,.12))}
 .brand-word span{color:var(--accent)}
-.nav-wrap{display:flex;align-items:center;gap:22px}
-.site-nav{display:flex;align-items:center;gap:clamp(13px,2.1vw,28px);color:var(--muted);font-size:.84rem}
-.site-nav a{padding:10px 0;transition:color .2s}
-.site-nav a:hover,.site-nav a[aria-current="location"]{color:var(--text)}
-.header-actions{display:flex;align-items:center;gap:10px}
-.theme-toggle,.menu-toggle{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--glass);color:var(--text);cursor:pointer;display:grid;place-items:center;transition:background .2s,border-color .2s}
+.header-right{display:flex;align-items:center;gap:22px}
+.site-nav{display:flex;align-items:center;gap:clamp(13px,2.1vw,29px);color:var(--muted);font-size:.83rem}
+.site-nav a{padding:9px 0;transition:color .2s}.site-nav a:hover{color:var(--text)}
+.header-actions{display:flex;align-items:center;gap:9px}
+.theme-toggle,.menu-toggle{width:41px;height:41px;border:1px solid var(--line);border-radius:50%;background:var(--glass);display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
 .theme-toggle:hover,.menu-toggle:hover{border-color:rgba(198,243,107,.45);background:rgba(198,243,107,.08)}
 .theme-toggle svg,.menu-toggle svg{width:18px;height:18px}
-.status-badge{padding:9px 12px;border:1px solid rgba(198,243,107,.24);border-radius:999px;color:var(--accent);font-size:.7rem;letter-spacing:.04em;white-space:nowrap}
+.status-badge{padding:8px 11px;border:1px solid rgba(198,243,107,.24);border-radius:999px;color:var(--accent);font-size:.67rem;letter-spacing:.045em;white-space:nowrap}
 .menu-toggle{display:none}
-.hero{min-height:630px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);align-items:center;gap:clamp(35px,6vw,86px);padding:78px 0 84px}
-.hero-copy{translate:0 var(--copy-parallax,0px);will-change:translate}
-.eyebrow,.section-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;font-weight:800}
-.eyebrow:before,.section-kicker:before{content:"";width:24px;height:1px;background:var(--accent)}
-h1{margin:22px 0 0;max-width:720px;font-size:clamp(3.5rem,7.2vw,6.7rem);line-height:.94;letter-spacing:-.078em;font-weight:750}
+.screen{min-height:calc(100svh - 136px);display:flex;align-items:center;width:min(var(--max),calc(100% - 64px));margin:auto;padding:36px 0 30px}
+.hero{width:100%;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(330px,.96fr);gap:clamp(38px,6vw,94px);align-items:center}
+.hero-copy{position:relative;z-index:2;translate:0 var(--copy-parallax,0px);will-change:translate}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;font-size:.69rem;font-weight:800}
+.eyebrow:before{content:"";width:24px;height:1px;background:var(--accent)}
+h1{margin:22px 0 0;max-width:720px;font-size:clamp(3.35rem,6.1vw,6.15rem);line-height:.96;letter-spacing:-.078em;font-weight:760}
 h1 span,.accent-text{color:var(--accent)}
-.hero-intro{max-width:550px;margin:26px 0 0;color:var(--muted);font-size:clamp(1rem,1.4vw,1.15rem);line-height:1.8}
-.demo-notice{display:flex;align-items:flex-start;gap:10px;margin-top:21px;max-width:550px;color:var(--muted);font-size:.78rem;line-height:1.65}
-.demo-notice .notice-icon{width:23px;height:23px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--accent);font-size:.72rem}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:30px}
-.btn{min-height:49px;padding:0 19px;display:inline-flex;justify-content:center;align-items:center;gap:10px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-size:.88rem;font-weight:760;transition:transform .2s,background .2s,border-color .2s,color .2s}
+.hero-intro{max-width:560px;margin:24px 0 0;color:var(--muted);font-size:clamp(1rem,1.26vw,1.11rem);line-height:1.82}
+.demo-notice{display:flex;align-items:flex-start;gap:10px;margin-top:18px;max-width:550px;color:var(--muted);font-size:.74rem;line-height:1.65}
+.notice-icon{width:22px;height:22px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--accent);font-size:.72rem}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-top:27px}
+.btn{min-height:48px;padding:0 19px;display:inline-flex;justify-content:center;align-items:center;gap:10px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-size:.86rem;font-weight:760;transition:transform .2s,background .2s,border-color .2s,color .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--accent);color:#172014}
-.btn-primary:hover{background:#d6ff83}
-.btn-secondary{border-color:var(--line);color:var(--text);background:var(--glass)}
-.btn-secondary:hover{border-color:rgba(198,243,107,.42);background:rgba(198,243,107,.06)}
-.hero-proof{display:flex;align-items:center;gap:11px;margin-top:27px;color:var(--muted);font-size:.78rem}
-.hero-proof strong{color:var(--text);font-weight:700}
-.hero-visual{position:relative;min-height:480px;display:grid;place-items:center;isolation:isolate;translate:0 var(--visual-parallax,0px);will-change:translate}
+.btn-primary{background:var(--accent);color:#172014}.btn-primary:hover{background:#d6ff83}
+.btn-secondary{border-color:var(--line);color:var(--text);background:var(--glass)}.btn-secondary:hover{border-color:rgba(198,243,107,.42);background:rgba(198,243,107,.06)}
+.hero-proof{display:flex;align-items:center;gap:11px;margin-top:24px;color:var(--muted);font-size:.76rem;line-height:1.6}.hero-proof strong{color:var(--text);font-weight:700}
+.hero-visual{position:relative;min-height:440px;display:grid;place-items:center;isolation:isolate;translate:0 var(--visual-parallax,0px);will-change:translate}
 .dashboard{position:relative;width:min(100%,455px);padding:24px;border:1px solid var(--line);border-radius:27px;background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.025));backdrop-filter:blur(18px);box-shadow:var(--shadow);translate:0 var(--card-parallax,0px);will-change:translate}
-.dash-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:.68rem;letter-spacing:.07em}
-.dash-status{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:.67rem;font-weight:800}
-.dash-status:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
-.dashboard h2{margin:23px 0 5px;font-size:1.65rem;letter-spacing:-.055em;line-height:1.12}
-.dash-sub{color:var(--muted);font-size:.8rem}
-.dash-label{margin-top:27px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.78rem}
-.dash-label span:last-child{color:var(--muted);font-size:.7rem}
-.dash-steps{display:grid;gap:15px;margin-top:17px}
-.dash-step{display:grid;grid-template-columns:92px minmax(0,1fr);gap:13px;align-items:center}
-.dash-step span{font-size:.74rem;color:var(--muted)}
-.step-track{height:7px;border-radius:999px;background:var(--line);overflow:hidden}
-.step-track i{display:block;height:100%;width:var(--w);border-radius:999px;background:linear-gradient(90deg,#8fb948,var(--accent))}
-.dash-foot{display:flex;justify-content:space-between;gap:12px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:.7rem}
-.dash-foot strong{color:var(--text)}
-.floating-note{position:absolute;right:-2%;bottom:5%;display:flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid var(--line);border-radius:16px;background:#202d22;box-shadow:0 20px 50px rgba(0,0,0,.25);max-width:235px}
+.dash-top{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--muted);font-size:.67rem;letter-spacing:.07em}
+.dash-status{display:inline-flex;align-items:center;gap:7px;color:var(--accent);font-size:.66rem;font-weight:800}.dash-status:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.dashboard h2{margin:22px 0 5px;font-size:1.62rem;letter-spacing:-.055em;line-height:1.12}
+.dash-sub{color:var(--muted);font-size:.78rem;line-height:1.6}
+.dash-label{margin-top:25px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.77rem}.dash-label span:last-child{color:var(--muted);font-size:.69rem}
+.dash-steps{display:grid;gap:15px;margin-top:17px}.dash-step{display:grid;grid-template-columns:92px minmax(0,1fr);gap:13px;align-items:center}.dash-step span{font-size:.73rem;color:var(--muted)}
+.step-track{height:7px;border-radius:999px;background:var(--line);overflow:hidden}.step-track i{display:block;height:100%;width:var(--w);border-radius:999px;background:linear-gradient(90deg,#8fb948,var(--accent))}
+.dash-foot{display:flex;justify-content:space-between;gap:12px;margin-top:25px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:.69rem;line-height:1.6}.dash-foot strong{color:var(--text)}
+.floating-note{position:absolute;right:-1%;bottom:3%;display:flex;align-items:center;gap:10px;padding:12px 15px;border:1px solid var(--line);border-radius:16px;background:#202d22;box-shadow:0 20px 50px rgba(0,0,0,.25);max-width:235px}
 .note-icon{width:33px;height:33px;display:grid;place-items:center;flex-shrink:0;border-radius:11px;background:rgba(198,243,107,.14);color:var(--accent)}
-.floating-note strong{display:block;font-size:.78rem}
-.floating-note small{display:block;color:var(--muted);font-size:.68rem;margin-top:2px;line-height:1.45}
-.section{padding:100px 0;scroll-margin-top:100px}
-.section-divider{border-top:1px solid var(--line)}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:36px}
-.section-head-copy{max-width:680px}
-.section-title{margin:14px 0 0;font-size:clamp(2.2rem,4.6vw,4.1rem);letter-spacing:-.07em;line-height:1.03;font-weight:740}
-.section-lead{max-width:700px;margin:17px 0 0;color:var(--muted);line-height:1.8;font-size:.96rem}
-.section-note{max-width:270px;margin:0;color:var(--muted);font-size:.75rem;line-height:1.7}
-.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.project-card,.service-card,.format-card,.faq-item{border:1px solid var(--line);border-radius:21px;background:var(--glass)}
-.project-card{overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
-.project-card:hover{transform:translateY(-4px);border-color:rgba(198,243,107,.38);box-shadow:var(--shadow)}
-.project-art{height:210px;padding:19px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.025));border-bottom:1px solid var(--line)}
-.art-label{position:absolute;left:17px;top:15px;color:var(--muted);font-size:.61rem;letter-spacing:.1em;font-weight:800}
-.brand-art{width:100%;max-width:285px;min-height:125px;display:grid;place-items:center;border:1px solid rgba(198,243,107,.22);border-radius:17px;background:rgba(16,25,20,.28);text-align:center}
-.brand-art .mini-star{font-size:2.2rem;color:var(--accent);line-height:1}
-.brand-art strong{display:block;font-size:1.38rem;letter-spacing:-.06em;margin-top:8px}
-.brand-art small{display:block;color:var(--muted);font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;margin-top:5px}
-.browser-art{width:100%;max-width:315px;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--surface);box-shadow:0 15px 45px rgba(0,0,0,.15)}
-.browser-top{height:23px;display:flex;align-items:center;gap:4px;padding:0 9px;border-bottom:1px solid var(--line)}
-.browser-top i{width:5px;height:5px;background:var(--muted);opacity:.7;border-radius:50%}
-.browser-body{padding:14px}
-.browser-body small{font-size:.48rem;color:var(--accent);letter-spacing:.11em;text-transform:uppercase}
-.browser-body b{display:block;max-width:220px;margin-top:9px;font-size:1.12rem;letter-spacing:-.05em;line-height:1.1}
-.browser-body em{display:block;width:68%;height:4px;background:var(--line);border-radius:3px;margin-top:10px}
-.browser-body em+em{width:45%;margin-top:5px}
-.browser-cta{width:69px;height:18px;border-radius:99px;background:var(--accent);margin-top:13px}
-.dashboard-art{width:100%;max-width:310px;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.dashboard-art .mock-box{min-height:62px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--surface)}
-.mock-box small{display:block;color:var(--muted);font-size:.55rem}
-.mock-box strong{display:block;margin-top:8px;font-size:.85rem}
-.mock-lines{grid-column:1/-1;height:69px;border:1px solid var(--line);border-radius:12px;padding:13px;display:flex;align-items:flex-end;gap:7px;background:var(--surface)}
-.mock-lines i{display:block;width:12%;height:var(--h);background:rgba(198,243,107,.68);border-radius:3px 3px 0 0}
-.project-body{padding:20px}
-.project-index{color:var(--accent);font-size:.68rem;letter-spacing:.12em;font-weight:800}
-.project-body h3{margin:10px 0 8px;font-size:1.16rem;letter-spacing:-.03em}
-.project-body p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.75}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.tag{border:1px solid var(--line);border-radius:999px;padding:5px 9px;background:rgba(0,0,0,.07);font-size:.65rem;color:var(--muted)}
-.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.service-card{padding:22px;transition:transform .22s,border-color .22s,background .22s}
-.service-card:hover{transform:translateY(-3px);border-color:rgba(198,243,107,.4);background:rgba(198,243,107,.045)}
-.service-symbol{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:rgba(198,243,107,.13);color:var(--accent);font-size:1.15rem}
-.service-card h3{margin:16px 0 8px;font-size:1.04rem;letter-spacing:-.03em}
-.service-card p{margin:0;color:var(--muted);font-size:.85rem;line-height:1.75}
-.service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
-.service-tags span{padding:5px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.64rem}
-.concept-banner{display:flex;align-items:flex-start;gap:12px;margin-top:22px;padding:15px 17px;border:1px solid rgba(198,243,107,.23);border-radius:16px;background:rgba(198,243,107,.045);color:var(--muted);font-size:.79rem;line-height:1.7}
-.concept-banner strong{color:var(--text)}
-.approach-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:35px;align-items:start}
-.approach-copy{max-width:760px;color:var(--muted);font-size:1rem;line-height:1.9;margin:0}
-.approach-quote{padding:24px;border:1px solid var(--line);border-radius:21px;background:var(--glass)}
-.approach-quote strong{display:block;color:var(--accent);font-size:1.05rem;letter-spacing:-.025em}
-.approach-quote p{margin:10px 0 0;color:var(--muted);font-size:.83rem;line-height:1.7}
-.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:31px}
-.process-card{padding:20px 18px;border:1px solid var(--line);border-radius:17px;background:var(--glass)}
-.process-number{color:var(--accent);font-size:.7rem;letter-spacing:.14em;font-weight:800}
-.process-card h3{margin:10px 0 7px;font-size:.97rem}
-.process-card p{margin:0;color:var(--muted);font-size:.79rem;line-height:1.7}
-.format-heading{margin:45px 0 17px;font-size:1.1rem;letter-spacing:-.025em}
-.format-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.format-card{padding:18px;display:flex;gap:12px;align-items:flex-start}
-.format-symbol{width:35px;height:35px;display:grid;place-items:center;flex-shrink:0;border-radius:11px;background:rgba(198,243,107,.13);color:var(--accent)}
-.format-card h4{margin:2px 0 6px;font-size:.88rem}
-.format-card p{margin:0;color:var(--muted);font-size:.76rem;line-height:1.65}
-.about-panel{position:relative;overflow:hidden;padding:clamp(27px,5vw,54px);border:1px solid var(--line);border-radius:28px;background:radial-gradient(ellipse at 100% 0%,rgba(198,243,107,.10),transparent 42%),var(--surface);box-shadow:var(--shadow)}
-.about-panel:after{content:"N";position:absolute;right:1%;bottom:-29%;font-size:clamp(14rem,30vw,28rem);font-weight:850;letter-spacing:-.12em;color:var(--accent);opacity:.035;pointer-events:none}
-.about-layout{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.55fr);gap:36px;align-items:center}
-.about-copy{color:var(--muted);font-size:.97rem;line-height:1.9}
-.about-copy p{margin:18px 0 0}
-.about-tagline{margin:26px 0 0;padding:18px 20px;border:1px solid rgba(198,243,107,.28);border-radius:16px;background:rgba(198,243,107,.055);color:var(--accent);font-size:.93rem;line-height:1.7}
-.about-side{padding:22px;border-left:1px solid var(--line)}
-.about-side .note-icon{margin-bottom:15px}
-.about-side h3{margin:0;font-size:1.1rem;letter-spacing:-.03em}
-.about-side p{margin:9px 0 0;color:var(--muted);font-size:.82rem;line-height:1.75}
-.faq-list{display:grid;gap:10px;max-width:900px}
-.faq-item{overflow:hidden}
-.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 21px;font-weight:720;font-size:.9rem}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary:after{content:"+";width:26px;height:26px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--accent);font-size:1rem;font-weight:500}
-.faq-item[open] summary:after{content:"−"}
-.faq-answer{margin:0;padding:0 21px 20px;color:var(--muted);font-size:.87rem;line-height:1.8;max-width:790px}
-.contact-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(250px,.75fr);gap:35px;align-items:center;padding:clamp(26px,5vw,48px);border:1px solid rgba(198,243,107,.24);border-radius:26px;background:linear-gradient(125deg,rgba(198,243,107,.075),rgba(255,255,255,.025) 60%),var(--surface)}
-.contact-panel h2{margin:13px 0 0;font-size:clamp(2.3rem,4.6vw,4rem);line-height:1;letter-spacing:-.07em}
-.contact-panel p{margin:16px 0 0;color:var(--muted);line-height:1.8;font-size:.92rem}
-.contact-status{padding:21px;border:1px solid var(--line);border-radius:18px;background:var(--glass)}
-.contact-status strong{display:block;font-size:.9rem}
-.contact-status p{margin:8px 0 0;font-size:.8rem}
-.contact-status .actions{margin-top:18px}
-.contact-status .btn{width:100%;min-height:44px;font-size:.81rem}
-.contact-demo-actions{display:grid;grid-template-columns:1fr;gap:8px}
-.contact-demo-actions .btn{text-align:center}
-.demo-toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:calc(100vw - 32px);padding:13px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);color:var(--text);box-shadow:var(--shadow);font-size:.84rem;line-height:1.55;text-align:center;transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
-.demo-toast.is-visible{opacity:1;transform:translate(-50%,0)}
-.site-footer{padding:29px 0 35px;border-top:1px solid var(--line)}
-.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
-.footer-brand{font-size:.9rem;font-weight:800}
-.footer-brand span{color:var(--accent)}
-.footer-note{max-width:560px;margin:7px 0 0;color:var(--muted);font-size:.73rem;line-height:1.7}
-.footer-links{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:.76rem}
-.footer-links a:hover{color:var(--text)}
+.floating-note strong{display:block;font-size:.78rem}.floating-note small{display:block;color:var(--muted);font-size:.68rem;margin-top:2px;line-height:1.45}
+.site-footer{border-top:1px solid var(--line);padding:14px 0 16px}
+.footer-inner{width:min(var(--max),calc(100% - 64px));margin:auto;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.footer-note{margin:0;color:var(--muted);font-size:.69rem;line-height:1.55}
+.footer-links{display:flex;flex-wrap:wrap;gap:15px;color:var(--muted);font-size:.72rem;align-items:center}.footer-links a:hover{color:var(--text)}
+/* Focused content containers keep the homepage single-screen. */
+.modal-overlay{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:20px;background:rgba(3,8,5,.74);backdrop-filter:blur(11px)}
+.modal-overlay[hidden]{display:none}
+.modal-panel{width:min(900px,100%);max-height:min(86svh,820px);overflow:auto;position:relative;padding:clamp(24px,4.5vw,42px);border:1px solid var(--line);border-radius:27px;background:radial-gradient(ellipse at 100% 0%,rgba(198,243,107,.11),transparent 43%),var(--surface);color:var(--text);box-shadow:0 32px 100px rgba(0,0,0,.48);overscroll-behavior:contain}
+.modal-panel.modal-wide{width:min(1050px,100%)}
+.modal-close{position:sticky;float:right;top:0;z-index:2;width:39px;height:39px;margin:-7px -7px 5px 14px;border-radius:50%;border:1px solid var(--line);background:var(--glass);color:var(--text);font-size:1.35rem;cursor:pointer}
+.modal-kicker{color:var(--accent);font-size:.69rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+.modal-panel h2{clear:none;font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.065em;line-height:1.02;margin:14px 54px 14px 0}
+.modal-lead{color:var(--muted);font-size:.93rem;line-height:1.8;margin:0;max-width:760px}
+.modal-lead strong{color:var(--text)}
+.modal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:23px}
+.content-card{padding:18px;border:1px solid var(--line);border-radius:17px;background:var(--glass);min-width:0}
+.card-symbol{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:rgba(198,243,107,.13);color:var(--accent);font-size:1.05rem}
+.content-card h3{margin:13px 0 7px;font-size:.97rem;letter-spacing:-.025em}
+.content-card p{margin:0;color:var(--muted);font-size:.81rem;line-height:1.72}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.tag{padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.63rem}
+.modal-banner{margin-top:18px;padding:14px 16px;border:1px solid rgba(198,243,107,.24);border-radius:14px;background:rgba(198,243,107,.045);font-size:.77rem;color:var(--muted);line-height:1.7}.modal-banner strong{color:var(--text)}
+.process-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:23px}
+.process-card{padding:15px;border:1px solid var(--line);border-radius:15px;background:var(--glass)}
+.process-card span{color:var(--accent);font-size:.66rem;letter-spacing:.1em;font-weight:800}.process-card h3{margin:9px 0 6px;font-size:.89rem}.process-card p{margin:0;color:var(--muted);font-size:.74rem;line-height:1.65}
+.format-heading{margin:28px 0 13px;font-size:1rem}.format-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.format-card{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:14px;background:var(--glass)}
+.format-card .card-symbol{width:31px;height:31px;font-size:.88rem;flex-shrink:0}.format-card h4{margin:1px 0 5px;font-size:.79rem}.format-card p{margin:0;color:var(--muted);font-size:.71rem;line-height:1.6}
+.about-copy{color:var(--muted);font-size:.93rem;line-height:1.85;max-width:760px}.about-copy p{margin:0 0 13px}.about-tagline{margin:20px 0 0;padding:16px 18px;border:1px solid rgba(198,243,107,.25);border-radius:14px;background:rgba(198,243,107,.05);color:var(--accent);font-size:.9rem;line-height:1.6}
+.about-side-note{margin-top:16px;color:var(--muted);font-size:.72rem;line-height:1.7}
+.faq-list{display:grid;gap:8px;margin-top:20px}.faq-item{border:1px solid var(--line);border-radius:14px;background:var(--glass);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px;font-weight:740;font-size:.84rem}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:"+";width:25px;height:25px;display:grid;place-items:center;flex-shrink:0;border:1px solid var(--line);border-radius:50%;color:var(--accent);font-weight:500}.faq-item[open] summary:after{content:"−"}
+.faq-answer{margin:0;padding:0 16px 16px;color:var(--muted);font-size:.82rem;line-height:1.75}
+.contact-concept{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.65fr);gap:22px;align-items:start;margin-top:22px}
+.contact-status{padding:19px;border:1px solid var(--line);border-radius:17px;background:var(--glass)}.contact-status strong{display:block;font-size:.88rem}.contact-status p{margin:8px 0 0;color:var(--muted);font-size:.8rem;line-height:1.7}
+.contact-actions{display:grid;gap:8px;margin-top:15px}.contact-actions button{justify-content:center;width:100%;min-height:42px;font-size:.78rem}
+.toast{position:fixed;left:50%;bottom:22px;z-index:100;max-width:calc(100vw - 30px);padding:12px 16px;border:1px solid var(--line);border-radius:13px;background:var(--surface2);color:var(--text);box-shadow:var(--shadow);font-size:.8rem;line-height:1.55;text-align:center;transform:translate(-50%,14px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:1050px){
-  .header-inner{width:min(var(--max),calc(100% - 36px))}
-  .site-nav{gap:13px;font-size:.77rem}
-  .nav-wrap{gap:14px}
-  .hero{gap:30px}
-  .hero-visual{min-height:420px}
-  .floating-note{right:0}
-  .section{padding:82px 0}
-  .services-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .approach-intro{gap:22px}
+ .header-inner,.footer-inner{width:calc(100% - 40px)}.screen{width:calc(100% - 40px)}.header-right{gap:14px}.site-nav{gap:14px;font-size:.78rem}.hero{gap:28px}.hero-visual{min-height:410px}.dashboard{padding:20px}.floating-note{right:0}
 }
 @media(max-width:780px){
-  html{scroll-padding-top:82px}
-  .container{width:calc(100% - 36px)}
-  .header-inner{min-height:72px;width:calc(100% - 36px)}
-  .nav-wrap{gap:9px}
-  .menu-toggle{display:grid}
-  .site-nav{display:none;position:absolute;top:calc(100% + 8px);left:18px;right:18px;padding:12px;flex-direction:column;align-items:stretch;gap:2px;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow);font-size:.9rem}
-  .site-nav.is-open{display:flex}
-  .site-nav a{padding:12px 13px;border-radius:10px}
-  .site-nav a:hover{background:var(--glass)}
-  .site-header{position:sticky}
-  .status-badge{display:none}
-  .hero{min-height:auto;grid-template-columns:1fr;gap:25px;padding:61px 0 63px}
-  .hero-copy{max-width:680px}
-  h1{font-size:clamp(3.4rem,11vw,5.5rem)}
-  .hero-visual{min-height:390px}
-  .dashboard{width:min(100%,475px)}
-  .floating-note{right:max(0px,calc((100% - 400px)/2));bottom:0}
-  .section{padding:70px 0}
-  .section-head{align-items:flex-start;flex-direction:column;gap:13px;margin-bottom:27px}
-  .section-note{max-width:580px}
-  .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .approach-intro,.about-layout,.contact-panel{grid-template-columns:1fr}
-  .about-side{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}
-  .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .format-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .contact-panel{gap:23px}
+ .header-inner{min-height:70px}.header-right{gap:9px}.menu-toggle{display:grid}
+ .site-nav{display:none;position:absolute;top:calc(100% + 8px);left:20px;right:20px;padding:10px;flex-direction:column;align-items:stretch;gap:1px;border:1px solid var(--line);border-radius:17px;background:var(--surface);box-shadow:var(--shadow);font-size:.88rem}
+ .site-nav.is-open{display:flex}.site-nav a{padding:12px;border-radius:10px}.site-nav a:hover{background:var(--glass)}
+ .status-badge{display:none}.header-right{margin-left:auto}
+ .screen{min-height:auto;padding:45px 0 40px}.hero{grid-template-columns:1fr;gap:23px}.hero-copy{max-width:680px}h1{font-size:clamp(3.3rem,10vw,5.2rem)}
+ .hero-visual{min-height:360px}.dashboard{width:min(100%,500px)}.floating-note{right:max(0px,calc((100% - 440px)/2));bottom:0}
+ .footer-inner{align-items:flex-start;flex-direction:column;gap:9px}.site-footer{padding:13px 0}
 }
-@media(max-width:540px){
-  .container{width:calc(100% - 30px)}
-  .header-inner{width:calc(100% - 30px);min-height:68px}
-  .brand{font-size:1rem;gap:8px}
-  .brand-mark{width:36px;height:36px}
-  .theme-toggle,.menu-toggle{width:38px;height:38px}
-  .header-actions{gap:6px}
-  .hero{padding:49px 0 53px}
-  h1{font-size:clamp(3rem,13.5vw,4.4rem)}
-  .hero-intro{font-size:.98rem}
-  .actions{gap:9px}
-  .btn{padding:0 15px;min-height:46px;font-size:.82rem}
-  .hero-visual{min-height:340px}
-  .dashboard{width:100%;padding:18px;border-radius:22px}
-  .dashboard h2{font-size:1.4rem;margin-top:20px}
-  .dash-step{grid-template-columns:78px minmax(0,1fr)}
-  .floating-note{right:0;bottom:-4px;padding:10px 12px;max-width:205px}
-  .section{padding:58px 0}
-  .section-title{font-size:clamp(2.15rem,10vw,3.2rem)}
-  .card-grid,.services-grid,.format-grid,.process-grid{grid-template-columns:1fr}
-  .project-art{height:190px}
-  .service-card{padding:20px}
-  .about-panel{padding:25px 21px;border-radius:22px}
-  .about-layout{gap:25px}
-  .about-tagline{padding:16px}
-  .faq-item summary{padding:17px;font-size:.84rem}
-  .faq-answer{padding:0 17px 18px}
-  .contact-panel{padding:24px 20px;border-radius:22px}
-  .footer-inner{flex-direction:column}
-  .footer-links{gap:13px}
+@media(max-width:560px){
+ .header-inner,.footer-inner{width:calc(100% - 30px)}.screen{width:calc(100% - 30px);padding:35px 0 32px}
+ .brand{font-size:1rem;gap:8px}.brand-mark{width:36px;height:36px}.header-actions{gap:6px}.theme-toggle,.menu-toggle{width:37px;height:37px}
+ h1{font-size:clamp(2.95rem,13vw,4.2rem);margin-top:18px}.hero-intro{font-size:.95rem;margin-top:19px}.demo-notice{font-size:.71rem}.actions{gap:8px;margin-top:22px}.btn{padding:0 14px;min-height:44px;font-size:.79rem}
+ .hero-visual{min-height:325px}.dashboard{padding:17px;border-radius:22px}.dashboard h2{font-size:1.4rem;margin-top:19px}.dash-step{grid-template-columns:78px minmax(0,1fr)}.floating-note{max-width:205px;padding:10px 12px}
+ .footer-note{font-size:.65rem}.footer-links{gap:12px;font-size:.69rem}
+ .modal-overlay{padding:10px}.modal-panel,.modal-panel.modal-wide{padding:23px 17px;border-radius:20px;max-height:91svh}
+ .modal-panel h2{font-size:clamp(1.8rem,8vw,2.6rem);margin-right:42px}.modal-grid,.format-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .content-card{padding:15px}.contact-concept{grid-template-columns:1fr}.contact-actions button{font-size:.77rem}
 }
-@media(max-width:370px){
-  .brand{font-size:.94rem}
-  .brand-mark{width:33px;height:33px}
-  .header-inner{width:calc(100% - 24px)}
-  .container{width:calc(100% - 24px)}
-  h1{font-size:2.85rem}
-  .theme-toggle,.menu-toggle{width:35px;height:35px}
-  .dash-foot{flex-direction:column}
+@media(max-width:780px) and (min-width:561px){.modal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.format-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-height:760px) and (min-width:781px){
+ .header-inner{min-height:66px}.screen{min-height:calc(100svh - 118px);padding:18px 0}.hero{gap:40px}.hero-visual{min-height:365px}.dashboard{padding:18px}.dashboard h2{margin-top:16px}.dash-steps{gap:10px}.dash-label{margin-top:18px}.dash-foot{margin-top:18px}.hero-intro{margin-top:17px}.demo-notice{margin-top:13px}.actions{margin-top:20px}.hero-proof{margin-top:17px}
 }
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
-  .project-card:hover,.service-card:hover,.btn:hover{transform:none}
-}
+@media(max-height:640px) and (min-width:781px){h1{font-size:clamp(3rem,5.1vw,4.8rem)}.hero-visual{min-height:315px}.floating-note{bottom:-1%}.site-footer{padding:9px 0}.screen{min-height:calc(100svh - 100px)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="#top" aria-label="Northstar home">
-      <img class="brand-mark" src="northstar-logo.svg" alt="" width="42" height="42">
-      <span class="brand-word">northstar<span>.</span></span>
-    </a>
-    <div class="nav-wrap">
-      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#approach">Our Approach</a>
-        <a href="#work">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle color theme">
-          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-        </button>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open navigation menu" title="Open menu">
-          <svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-        <span class="status-badge">Concept demo</span>
-      </div>
-    </div>
+<a class="skip-link" href="#hero">Skip to content</a>
+<header class="site-header" id="top">
+ <div class="header-inner">
+  <a class="brand" href="#top" aria-label="Northstar home"><img class="brand-mark" src="northstar-logo.svg" alt="" width="42" height="42"><span class="brand-word">northstar<span>.</span></span></a>
+  <div class="header-right">
+   <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+    <a href="#services" data-modal="services">Services</a>
+    <a href="#approach" data-modal="approach">Our Approach</a>
+    <a href="#work" data-modal="work">Portfolio</a>
+    <a href="#about" data-modal="about">About</a>
+    <a href="#faq" data-modal="faq">FAQ</a>
+   </nav>
+   <div class="header-actions">
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle theme"><svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg></button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open navigation menu" title="Open menu"><svg id="menuIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <span class="status-badge">Concept demo</span>
+   </div>
   </div>
+ </div>
 </header>
 
-<main id="main">
-  <section class="hero container" id="top" aria-labelledby="heroTitle">
-    <div class="hero-copy">
-      <div class="eyebrow">Fictional brand concept · Sample hero copy</div>
-      <h1 id="heroTitle">Your Goals. <span>Our Expertise.</span> Real Results.</h1>
-      <p class="hero-intro">We work closely with businesses and individuals to understand their needs, create effective solutions, and deliver lasting value through innovation, collaboration, and excellence.</p>
-      <div class="demo-notice"><span class="notice-icon" aria-hidden="true">i</span><span><strong>This is a design demo, not a real business.</strong> The headline and service messaging are sample copy; Northstar has no operating company, clients, contact inbox, or services for sale.</span></div>
-      <div class="actions">
-        <a class="btn btn-primary" href="#contact">Get Started Today <span aria-hidden="true">↗</span></a>
-        <a class="btn btn-secondary" href="#services">View Our Services <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-proof"><span class="note-icon" aria-hidden="true">✦</span><span><strong>Brand, website &amp; experience mockup.</strong><br>All sample content is clearly identified.</span></div>
+<main id="hero" class="screen">
+ <section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-copy">
+   <div class="eyebrow">Fictional brand concept · Single-screen design</div>
+   <h1 id="heroTitle">Your Goals.<br><span>Our Expertise.</span><br>Real Results.</h1>
+   <p class="hero-intro">We work closely with businesses and individuals to understand their needs, create effective solutions, and deliver lasting value through innovation, collaboration, and excellence.</p>
+   <div class="demo-notice"><span class="notice-icon" aria-hidden="true">i</span><span><strong>This is a design demo, not a real business.</strong> The brand, service descriptions, and portfolio visuals are illustrative. Northstar has no operating company, clients, contact inbox, or services for sale.</span></div>
+   <div class="actions">
+    <button class="btn btn-primary" type="button" data-open-modal="contact">Get Started Today <span aria-hidden="true">↗</span></button>
+    <button class="btn btn-secondary" type="button" data-open-modal="services">View Our Services <span aria-hidden="true">↓</span></button>
+   </div>
+   <div class="hero-proof"><span class="note-icon" aria-hidden="true">✦</span><span><strong>Premium brand, website &amp; experience mockup.</strong><br>All sample content is clearly identified.</span></div>
+  </div>
+  <div class="hero-visual" aria-label="Illustrative project dashboard, not connected to live data">
+   <div class="dashboard">
+    <div class="dash-top"><span>PROJECT CONCEPT</span><span class="dash-status">DEMO ONLY</span></div>
+    <h2>A direction taking shape.</h2>
+    <div class="dash-sub">Illustrative workflow — no live business data.</div>
+    <div class="dash-label"><strong>Example project phases</strong><span>Sample UI</span></div>
+    <div class="dash-steps">
+     <div class="dash-step"><span>Discovery</span><div class="step-track"><i style="--w:88%"></i></div></div>
+     <div class="dash-step"><span>Structure</span><div class="step-track"><i style="--w:68%"></i></div></div>
+     <div class="dash-step"><span>Design</span><div class="step-track"><i style="--w:52%"></i></div></div>
+     <div class="dash-step"><span>Refinement</span><div class="step-track"><i style="--w:35%"></i></div></div>
     </div>
-    <div class="hero-visual" aria-label="Illustrative website design dashboard">
-      <div class="dashboard">
-        <div class="dash-top"><span>PROJECT CONCEPT</span><span class="dash-status">DEMO ONLY</span></div>
-        <h2>A direction taking shape.</h2>
-        <div class="dash-sub">Illustrative workflow — no live business data.</div>
-        <div class="dash-label"><strong>Example project phases</strong><span>Sample UI</span></div>
-        <div class="dash-steps">
-          <div class="dash-step"><span>Discovery</span><div class="step-track"><i style="--w:88%"></i></div></div>
-          <div class="dash-step"><span>Structure</span><div class="step-track"><i style="--w:68%"></i></div></div>
-          <div class="dash-step"><span>Design</span><div class="step-track"><i style="--w:52%"></i></div></div>
-          <div class="dash-step"><span>Refinement</span><div class="step-track"><i style="--w:35%"></i></div></div>
-        </div>
-        <div class="dash-foot"><span><strong>Visual concept</strong><br>Not connected to real projects</span><span>Preview / 01</span></div>
-      </div>
-      <div class="floating-note"><span class="note-icon">✦</span><span><strong>Designed with purpose.</strong><small>Sample brand experience only.</small></span></div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="work" aria-labelledby="workTitle">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-head-copy"><div class="section-kicker">Selected concepts</div><h2 class="section-title" id="workTitle">Ideas made <span class="accent-text">visual.</span></h2><p class="section-lead">A small collection of fictional design explorations to demonstrate the Northstar visual direction across branding, websites, and digital interfaces.</p></div>
-        <p class="section-note">These are illustrative mockups, not paid projects, client work, testimonials, or real business results.</p>
-      </div>
-      <div class="card-grid">
-        <article class="project-card">
-          <div class="project-art"><span class="art-label">CONCEPT / 01</span><div class="brand-art"><div><div class="mini-star" aria-hidden="true">✦</div><strong>northstar.</strong><small>Fictional brand identity</small></div></div></div>
-          <div class="project-body"><span class="project-index">BRAND IDENTITY</span><h3>Compass-inspired brand system</h3><p>A premium visual direction built around a compass motif, dark forest tones, metallic gold accents, and confident typography.</p><div class="tags"><span class="tag">Identity</span><span class="tag">Typography</span><span class="tag">Color system</span></div></div>
-        </article>
-        <article class="project-card">
-          <div class="project-art"><span class="art-label">CONCEPT / 02</span><div class="browser-art"><div class="browser-top"><i></i><i></i><i></i></div><div class="browser-body"><small>Business website mockup</small><b>A good idea deserves a clear story.</b><em></em><em></em><div class="browser-cta"></div></div></div></div>
-          <div class="project-body"><span class="project-index">WEB DESIGN</span><h3>Responsive landing page</h3><p>A sample website structure with a clear headline, a focused call to action, content cards, and adaptable layouts.</p><div class="tags"><span class="tag">Responsive UI</span><span class="tag">UX structure</span><span class="tag">Accessibility</span></div></div>
-        </article>
-        <article class="project-card">
-          <div class="project-art"><span class="art-label">CONCEPT / 03</span><div class="dashboard-art"><div class="mock-box"><small>EXAMPLE MODULE</small><strong>Overview</strong></div><div class="mock-box"><small>EXAMPLE MODULE</small><strong>Insights</strong></div><div class="mock-lines" aria-hidden="true"><i style="--h:28%"></i><i style="--h:56%"></i><i style="--h:38%"></i><i style="--h:72%"></i><i style="--h:47%"></i><i style="--h:88%"></i><i style="--h:63%"></i></div></div></div>
-          <div class="project-body"><span class="project-index">DIGITAL EXPERIENCE</span><h3>Concept dashboard interface</h3><p>A visual exploration of a structured dashboard layout with legible data regions and reusable interface elements.</p><div class="tags"><span class="tag">Dashboard UI</span><span class="tag">Components</span><span class="tag">Data layout</span></div></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="services" aria-labelledby="servicesTitle">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-head-copy"><div class="section-kicker">Our services / sample copy</div><h2 class="section-title" id="servicesTitle">Practical solutions.<br><span class="accent-text">Meaningful progress.</span></h2><p class="section-lead">We provide professional solutions designed to help our clients grow, innovate, and succeed. Our services are tailored to meet your unique goals and deliver measurable results.</p></div>
-        <p class="section-note">The text below is illustrative website copy only. Northstar is fictional and does not offer these services.</p>
-      </div>
-      <div class="services-grid">
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">✦</span><h3>Consulting &amp; Strategy</h3><p>Expert guidance to help you identify opportunities, solve challenges, and achieve your business objectives.</p><div class="service-tags"><span>Opportunity planning</span><span>Strategic direction</span></div></article>
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">☷</span><h3>Project Management</h3><p>End-to-end project planning, coordination, and execution to ensure timely and successful delivery.</p><div class="service-tags"><span>Planning</span><span>Coordination</span><span>Delivery</span></div></article>
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">⌘</span><h3>Digital Solutions</h3><p>Modern, scalable solutions that improve efficiency, enhance customer experiences, and support business growth.</p><div class="service-tags"><span>Digital tools</span><span>Customer experience</span></div></article>
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">▤</span><h3>Business Support Services</h3><p>Reliable operational support to streamline processes, improve productivity, and drive performance.</p><div class="service-tags"><span>Operations</span><span>Productivity</span></div></article>
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">◇</span><h3>Training &amp; Development</h3><p>Practical training programs and workshops designed to build skills, knowledge, and confidence.</p><div class="service-tags"><span>Skills</span><span>Workshops</span><span>Learning</span></div></article>
-        <article class="service-card"><span class="service-symbol" aria-hidden="true">◎</span><h3>Ongoing Support</h3><p>Dedicated assistance and continuous improvement to help you maintain momentum and adapt to changing needs.</p><div class="service-tags"><span>Follow-through</span><span>Improvement</span></div></article>
-      </div>
-      <div class="concept-banner"><span class="note-icon" aria-hidden="true">i</span><span><strong>Concept disclaimer:</strong> These service descriptions are mock content for the website design. There is no real Northstar business, service team, or customer offering behind this demo.</span></div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="approach" aria-labelledby="approachTitle">
-    <div class="container">
-      <div class="section-head"><div class="section-head-copy"><div class="section-kicker">Our approach / sample copy</div><h2 class="section-title" id="approachTitle">Clear thinking.<br><span class="accent-text">Work with direction.</span></h2></div></div>
-      <div class="approach-intro">
-        <p class="approach-copy">We combine deep analysis, practical execution, and continuous improvement to deliver measurable results. We begin by understanding objectives, challenges, and stakeholder needs. Based on these insights, we develop tailored solutions, implement them efficiently, and monitor progress through clear performance indicators. By maintaining close collaboration and adapting to feedback, we ensure sustainable outcomes and long-term value.</p>
-        <aside class="approach-quote"><strong>Example workflow · Not a real company process</strong><p>This process graphic demonstrates a way to structure project work. It is included for presentation purposes and does not describe an operating Northstar business.</p></aside>
-      </div>
-      <div class="process-grid">
-        <article class="process-card"><span class="process-number">01 / DISCOVER</span><h3>Define the goal</h3><p>Understand the audience, brief, objectives, constraints, and desired outcome.</p></article>
-        <article class="process-card"><span class="process-number">02 / ORGANIZE</span><h3>Build the structure</h3><p>Research the context, prioritize information, and map a clear plan.</p></article>
-        <article class="process-card"><span class="process-number">03 / CREATE</span><h3>Make it clear</h3><p>Develop the content, visual direction, and supporting materials.</p></article>
-        <article class="process-card"><span class="process-number">04 / REFINE</span><h3>Review the result</h3><p>Check accuracy, usability, consistency, and practical next steps.</p></article>
-      </div>
-      <h3 class="format-heading">Example project formats</h3>
-      <div class="format-grid">
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">▤</span><div><h4>Business proposal</h4><p>Objectives, scope, value proposition, assumptions, risks, and recommendations.</p></div></article>
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">⌘</span><div><h4>Company website</h4><p>Sitemap, content structure, responsive layout, and quality checklist.</p></div></article>
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">☷</span><div><h4>Project plan</h4><p>Tasks, dependencies, responsibilities, milestones, and a risk log.</p></div></article>
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">✧</span><div><h4>Startup pitch deck</h4><p>Pitch storyline, market context, assumptions, and a clear funding narrative.</p></div></article>
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">⌕</span><div><h4>Research paper</h4><p>Research question, source map, methodology, evidence, and references.</p></div></article>
-        <article class="format-card"><span class="format-symbol" aria-hidden="true">▥</span><div><h4>Consulting presentation</h4><p>Key insights, options, recommendations, implementation path, and measures.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="about" aria-labelledby="aboutTitle">
-    <div class="container">
-      <div class="about-panel">
-        <div class="about-layout">
-          <div>
-            <div class="section-kicker">About us / sample copy</div>
-            <h2 class="section-title" id="aboutTitle">A fictional brand.<br><span class="accent-text">A clear direction.</span></h2>
-            <div class="about-copy">
-              <p>We help businesses and individuals turn ideas into impactful results. Through innovation, expertise, and a commitment to excellence, we deliver solutions that are practical, effective, and tailored to our clients' unique needs.</p>
-              <p>Our approach is built on collaboration, transparency, and continuous improvement. We take the time to understand your goals, develop strategies that work, and provide the support needed to achieve lasting success.</p>
-            </div>
-            <p class="about-tagline"><strong>Driven by quality. Focused on results. Committed to your success.</strong></p>
-          </div>
-          <aside class="about-side">
-            <span class="note-icon" aria-hidden="true">✦</span>
-            <h3>About this demo</h3>
-            <p>Northstar is a fictional brand website concept. The copy, services, portfolio visuals, and workflows are presented as examples only. There are no real clients, employees, business operations, or offers.</p>
-          </aside>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="faq" aria-labelledby="faqTitle">
-    <div class="container">
-      <div class="section-head"><div class="section-head-copy"><div class="section-kicker">Frequently asked questions</div><h2 class="section-title" id="faqTitle">A few things to <span class="accent-text">know.</span></h2><p class="section-lead">Questions about this website concept and what the sample content represents.</p></div></div>
-      <div class="faq-list">
-        <details class="faq-item"><summary>Is Northstar a real operating business?</summary><p class="faq-answer">No. Northstar is a fictional brand and website design concept. It does not represent a registered or operating company.</p></details>
-        <details class="faq-item"><summary>Can I hire Northstar for these services?</summary><p class="faq-answer">No. The services listed are sample content used to demonstrate a business website layout. There is no service team or inquiry channel.</p></details>
-        <details class="faq-item"><summary>Are the portfolio examples real client projects?</summary><p class="faq-answer">No. The cards are fictional visual explorations created for this concept. They do not represent actual clients, paid projects, or business results.</p></details>
-        <details class="faq-item"><summary>Does this website collect information?</summary><p class="faq-answer">This static demonstration has no contact form, analytics, account system, or backend data collection. Theme preference is saved locally in your browser when local storage is available.</p></details>
-        <details class="faq-item"><summary>What does this website demonstrate?</summary><p class="faq-answer">It demonstrates a responsive brand website with a visual identity, sample service content, portfolio-style cards, navigation, theme switching, scroll effects, and accessible content structure.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-divider" id="contact" aria-labelledby="contactTitle">
-    <div class="container">
-      <div class="contact-panel">
-        <div>
-          <div class="section-kicker">Next step / concept demo</div>
-          <h2 id="contactTitle">Make room for <span class="accent-text">what's next.</span></h2>
-          <p>In a real business website, this area could help visitors start a conversation, request a consultation, or describe a project. For now, it is a visual placeholder only.</p>
-        </div>
-        <aside class="contact-status">
-          <strong>Contact channels are not configured.</strong>
-          <p>Northstar is fictional, so this demo has no real inbox, consultation service, or project intake process. No information is sent from this page.</p>
-          <div class="actions contact-demo-actions">
-            <a class="btn btn-primary" href="#services">Explore Sample Services <span aria-hidden="true">↗</span></a>
-            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Get in Touch">Get in Touch</button>
-            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Request a Consultation">Request a Consultation</button>
-            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Start Your Project Today">Start Your Project Today</button>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+    <div class="dash-foot"><span><strong>Visual concept</strong><br>Not connected to real projects</span><span>Preview / 01</span></div>
+   </div>
+   <div class="floating-note"><span class="note-icon">✦</span><span><strong>Designed with purpose.</strong><small>Sample brand experience only.</small></span></div>
+  </div>
+ </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div>
-      <a class="footer-brand" href="#top">northstar<span>.</span></a>
-      <p class="footer-note">A fictional brand website concept. All portfolio visuals, services, workflows, and copy are illustrative; no real business or services are represented.</p>
-      <p class="footer-note">© <span id="year"></span> Northstar concept. Design demonstration only.</p>
-    </div>
-    <div class="footer-links" aria-label="Footer links">
-      <a href="#services">Services</a><a href="#work">Portfolio</a><a href="#faq">FAQ</a><a href="#top">Back to top ↑</a>
-    </div>
-  </div>
+ <div class="footer-inner">
+  <p class="footer-note">© <span id="year"></span> Northstar concept · Fictional design demo only.</p>
+  <div class="footer-links"><a href="#work" data-modal="work">Portfolio</a><a href="#contact" data-modal="contact">Contact concept</a><a href="#privacy" data-modal="privacy">Privacy</a></div>
+ </div>
 </footer>
-<div class="demo-toast" id="demoToast" role="status" aria-live="polite" hidden></div>
 
+<!-- Services -->
+<div class="modal-overlay" id="servicesModal" data-modal-panel="services" hidden>
+ <section class="modal-panel modal-wide" role="dialog" aria-modal="true" aria-labelledby="servicesTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close services">×</button>
+  <div class="modal-kicker">Our services · Sample website copy</div>
+  <h2 id="servicesTitle">Practical solutions.<br><span class="accent-text">Meaningful progress.</span></h2>
+  <p class="modal-lead">We provide professional solutions designed to help our clients grow, innovate, and succeed. Our services are tailored to meet your unique goals and deliver measurable results. <strong>These are illustrative examples only; Northstar is not an operating business and does not provide these services.</strong></p>
+  <div class="modal-grid">
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">✦</span><h3>Consulting &amp; Strategy</h3><p>Expert guidance to help you identify opportunities, solve challenges, and achieve your business objectives.</p><div class="tags"><span class="tag">Opportunity planning</span><span class="tag">Strategy</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">☷</span><h3>Project Management</h3><p>End-to-end project planning, coordination, and execution to ensure timely and successful delivery.</p><div class="tags"><span class="tag">Planning</span><span class="tag">Delivery</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">⌘</span><h3>Digital Solutions</h3><p>Modern, scalable solutions that improve efficiency, enhance customer experiences, and support business growth.</p><div class="tags"><span class="tag">Digital tools</span><span class="tag">Experience</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">▤</span><h3>Business Support Services</h3><p>Reliable operational support to streamline processes, improve productivity, and drive performance.</p><div class="tags"><span class="tag">Operations</span><span class="tag">Productivity</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">◇</span><h3>Training &amp; Development</h3><p>Practical training programs and workshops designed to build skills, knowledge, and confidence.</p><div class="tags"><span class="tag">Skills</span><span class="tag">Workshops</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">◎</span><h3>Ongoing Support</h3><p>Dedicated assistance and continuous improvement to help you maintain momentum and adapt to changing needs.</p><div class="tags"><span class="tag">Follow-through</span><span class="tag">Improvement</span></div></article>
+  </div>
+  <div class="modal-banner"><strong>Ready to Get Started?</strong> In a real business website, this area could invite visitors to get in touch, request a consultation, or start a project. Here, those calls to action are concept examples only.</div>
+  <div class="actions"><button type="button" class="btn btn-primary" data-demo-cta="Get in Touch">Get in Touch</button><button type="button" class="btn btn-secondary" data-demo-cta="Request a Consultation">Request a Consultation</button><button type="button" class="btn btn-secondary" data-demo-cta="Start Your Project Today">Start Your Project Today</button></div>
+ </section>
+</div>
+
+<!-- Approach -->
+<div class="modal-overlay" id="approachModal" data-modal-panel="approach" hidden>
+ <section class="modal-panel modal-wide" role="dialog" aria-modal="true" aria-labelledby="approachTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close our approach">×</button>
+  <div class="modal-kicker">Our approach · Sample website copy</div>
+  <h2 id="approachTitle">Clear thinking.<br><span class="accent-text">Work with direction.</span></h2>
+  <p class="modal-lead">We combine deep analysis, practical execution, and continuous improvement to deliver measurable results. We begin by understanding objectives, challenges, and stakeholder needs. Based on these insights, we develop tailored solutions, implement them efficiently, and monitor progress through clear performance indicators. By maintaining close collaboration and adapting to feedback, we ensure sustainable outcomes and long-term value.</p>
+  <div class="process-grid">
+   <article class="process-card"><span>01 / DISCOVER</span><h3>Define the goal</h3><p>Understand the audience, objectives, constraints, and desired outcome.</p></article>
+   <article class="process-card"><span>02 / ORGANIZE</span><h3>Build the structure</h3><p>Research the context, prioritize information, and map a clear plan.</p></article>
+   <article class="process-card"><span>03 / CREATE</span><h3>Make it clear</h3><p>Develop content, visual direction, and supporting materials.</p></article>
+   <article class="process-card"><span>04 / REFINE</span><h3>Review the result</h3><p>Check accuracy, usability, consistency, and practical next steps.</p></article>
+  </div>
+  <h3 class="format-heading">Example project formats</h3>
+  <div class="format-grid">
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">▤</span><div><h4>Business proposal</h4><p>Objectives, scope, value proposition, assumptions, risks, and recommendations.</p></div></article>
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">⌘</span><div><h4>Company website</h4><p>Sitemap, content structure, responsive layout, and quality checklist.</p></div></article>
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">☷</span><div><h4>Project plan</h4><p>Tasks, dependencies, responsibilities, milestones, and risk log.</p></div></article>
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">✧</span><div><h4>Startup pitch deck</h4><p>Pitch storyline, market context, assumptions, and funding narrative.</p></div></article>
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">⌕</span><div><h4>Research paper</h4><p>Research question, source map, methodology, evidence, and references.</p></div></article>
+   <article class="format-card"><span class="card-symbol" aria-hidden="true">▥</span><div><h4>Consulting presentation</h4><p>Key insights, options, recommendations, implementation path, and measures.</p></div></article>
+  </div>
+  <div class="modal-banner"><strong>Concept demo:</strong> this workflow describes a sample approach, not real Northstar operations or a live service process.</div>
+ </section>
+</div>
+
+<!-- Portfolio -->
+<div class="modal-overlay" id="workModal" data-modal-panel="work" hidden>
+ <section class="modal-panel modal-wide" role="dialog" aria-modal="true" aria-labelledby="workTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close portfolio">×</button>
+  <div class="modal-kicker">Selected concepts · Fictional visuals</div>
+  <h2 id="workTitle">Ideas made <span class="accent-text">visual.</span></h2>
+  <p class="modal-lead">A small collection of fictional design explorations showing how the Northstar visual direction could appear across branding, websites, and digital interfaces. These are not real client projects or business results.</p>
+  <div class="modal-grid">
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">✦</span><h3>Compass-inspired identity</h3><p>A premium visual system using a compass motif, dark forest tones, metallic gold accents, and confident typography.</p><div class="tags"><span class="tag">Branding</span><span class="tag">Typography</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">⌘</span><h3>Responsive website</h3><p>A sample landing page with a clear headline, focused CTAs, clean content hierarchy, and layouts that adapt to devices.</p><div class="tags"><span class="tag">Web design</span><span class="tag">Responsive UI</span></div></article>
+   <article class="content-card"><span class="card-symbol" aria-hidden="true">▥</span><h3>Dashboard interface</h3><p>A fictional interface exploration with reusable components, a defined visual hierarchy, and sample workflow indicators.</p><div class="tags"><span class="tag">Dashboard UI</span><span class="tag">Components</span></div></article>
+  </div>
+  <div class="modal-banner"><strong>Portfolio disclaimer:</strong> all visuals and descriptions are illustrative concept work created for this design demo.</div>
+ </section>
+</div>
+
+<!-- About -->
+<div class="modal-overlay" id="aboutModal" data-modal-panel="about" hidden>
+ <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close About Us">×</button>
+  <div class="modal-kicker">About us · Sample website copy</div>
+  <h2 id="aboutTitle">Your Goals.<br><span class="accent-text">Our Expertise.</span></h2>
+  <div class="about-copy">
+   <p>We help businesses and individuals turn ideas into impactful results. Through innovation, expertise, and a commitment to excellence, we deliver solutions that are practical, effective, and tailored to our clients' unique needs.</p>
+   <p>Our approach is built on collaboration, transparency, and continuous improvement. We take the time to understand your goals, develop strategies that work, and provide the support needed to achieve lasting success.</p>
+  </div>
+  <p class="about-tagline"><strong>Driven by quality. Focused on results. Committed to your success.</strong></p>
+  <p class="about-side-note">Northstar is a fictional brand website concept. This copy is illustrative; no real company, clients, employees, operations, or services are represented.</p>
+ </section>
+</div>
+
+<!-- FAQ -->
+<div class="modal-overlay" id="faqModal" data-modal-panel="faq" hidden>
+ <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="faqTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close FAQ">×</button>
+  <div class="modal-kicker">Frequently asked questions</div>
+  <h2 id="faqTitle">A few things to <span class="accent-text">know.</span></h2>
+  <p class="modal-lead">Questions about the Northstar website concept and what the sample content represents.</p>
+  <div class="faq-list">
+   <details class="faq-item"><summary>Is Northstar a real business?</summary><p class="faq-answer">No. Northstar is a fictional brand and website design concept. It does not represent an operating company.</p></details>
+   <details class="faq-item"><summary>Can I hire Northstar for these services?</summary><p class="faq-answer">No. The services shown are sample content used to demonstrate a premium business website layout. There is no service team or inquiry channel.</p></details>
+   <details class="faq-item"><summary>Are the portfolio examples real projects?</summary><p class="faq-answer">No. They are fictional visual explorations, not client projects, testimonials, or business results.</p></details>
+   <details class="faq-item"><summary>Does this site collect information?</summary><p class="faq-answer">This static demo has no contact form, analytics, account system, or backend data collection. The optional theme preference is saved locally in your browser if storage is available.</p></details>
+   <details class="faq-item"><summary>What does the website demonstrate?</summary><p class="faq-answer">It demonstrates a single-screen responsive landing page with focused content containers, theme switching, scroll-based visual depth, and accessible navigation.</p></details>
+  </div>
+ </section>
+</div>
+
+<!-- Contact -->
+<div class="modal-overlay" id="contactModal" data-modal-panel="contact" hidden>
+ <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close Get Started">×</button>
+  <div class="modal-kicker">Get started · Concept demo</div>
+  <h2 id="contactTitle">Ready for what's <span class="accent-text">next?</span></h2>
+  <p class="modal-lead">In a real business website, this would be the place to begin a conversation, request a consultation, or describe a project. Northstar is fictional, so these actions are examples only.</p>
+  <div class="contact-concept">
+   <div>
+    <div class="about-copy"><p><strong style="color:var(--text)">Turn the idea into a plan.</strong></p><p>This layout demonstrates how a simple contact path could look when an actual business is ready to publish its verified contact details and inquiry process.</p></div>
+   </div>
+   <aside class="contact-status"><strong>Contact channels are not configured.</strong><p>No real inbox, consultation service, or project intake system is connected. No information will be submitted or sent.</p><div class="contact-actions"><button class="btn btn-primary" type="button" data-demo-cta="Get in Touch">Get in Touch</button><button class="btn btn-secondary" type="button" data-demo-cta="Request a Consultation">Request a Consultation</button><button class="btn btn-secondary" type="button" data-demo-cta="Start Your Project Today">Start Your Project Today</button></div></aside>
+  </div>
+ </section>
+</div>
+
+<!-- Privacy -->
+<div class="modal-overlay" id="privacyModal" data-modal-panel="privacy" hidden>
+ <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" tabindex="-1">
+  <button class="modal-close" type="button" data-close-modal aria-label="Close privacy information">×</button>
+  <div class="modal-kicker">Privacy · Demo information</div>
+  <h2 id="privacyTitle">Simple, transparent <span class="accent-text">by design.</span></h2>
+  <p class="modal-lead">This website is a static concept demo. It has no account system, contact form, analytics integration, or backend collection of personal information. The color-theme choice may be stored in local browser storage. Standard hosting infrastructure may process basic request data as part of serving the page.</p>
+ </section>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 (function(){
-  const root=document.documentElement;
-  const body=document.body;
-  const themeToggle=document.getElementById('themeToggle');
-  const themeIcon=document.getElementById('themeIcon');
-  const themeColorMeta=document.getElementById('themeColorMeta');
-  const menuToggle=document.getElementById('menuToggle');
-  const menuIcon=document.getElementById('menuIcon');
-  const siteNav=document.getElementById('siteNav');
-  const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
-  document.getElementById('year').textContent=String(new Date().getFullYear());
-
-  function applyTheme(theme,save){
-    const light=theme==='light';
-    body.classList.toggle('light',light);
-    themeToggle.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
-    themeToggle.setAttribute('title',light?'Switch to dark theme':'Switch to light theme');
-    themeIcon.innerHTML=light
-      ? '<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/>'
-      : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
-    themeColorMeta.setAttribute('content',light?'#f3f5ec':'#101914');
-    if(save){try{localStorage.setItem('northstar-theme',light?'light':'dark')}catch(error){}}
+ const body=document.body,root=document.documentElement;
+ const themeToggle=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),themeColorMeta=document.getElementById('themeColorMeta');
+ const menuToggle=document.getElementById('menuToggle'),menuIcon=document.getElementById('menuIcon'),siteNav=document.getElementById('siteNav');
+ const toast=document.getElementById('toast'),motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+ document.getElementById('year').textContent=String(new Date().getFullYear());
+ function applyTheme(theme,save){
+  const light=theme==='light';body.classList.toggle('light',light);
+  themeToggle.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');
+  themeToggle.setAttribute('title',light?'Switch to dark theme':'Switch to light theme');
+  themeIcon.innerHTML=light?'<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"/>':'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>';
+  themeColorMeta.setAttribute('content',light?'#f3f5ec':'#101914');
+  if(save){try{localStorage.setItem('northstar-theme',light?'light':'dark')}catch(error){}}
+ }
+ let saved='dark';try{const v=localStorage.getItem('northstar-theme');if(v==='dark'||v==='light')saved=v}catch(error){}
+ applyTheme(saved,false);themeToggle.addEventListener('click',()=>applyTheme(body.classList.contains('light')?'dark':'light',true));
+ function closeMenu(){siteNav.classList.remove('is-open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open navigation menu');menuToggle.title='Open menu';menuIcon.innerHTML='<path d="M4 7h16M4 12h16M4 17h16"/>'}
+ menuToggle.addEventListener('click',()=>{const open=!siteNav.classList.contains('is-open');siteNav.classList.toggle('is-open',open);menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');menuToggle.title=open?'Close menu':'Open menu';menuIcon.innerHTML=open?'<path d="m6 6 12 12M18 6 6 18"/>':'<path d="M4 7h16M4 12h16M4 17h16"/>'});
+ const modalPairs=[...document.querySelectorAll('[data-modal-panel]')].map(overlay=>({key:overlay.dataset.modalPanel,overlay,panel:overlay.querySelector('[role="dialog"]'),close:overlay.querySelector('[data-close-modal]')}));
+ let activeModal=null,lastFocus=null,toastTimer=null;
+ function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),4000)}
+ function closeActiveModal(){if(!activeModal)return;activeModal.overlay.hidden=true;activeModal=null;body.style.overflow='';if(lastFocus&&typeof lastFocus.focus==='function')lastFocus.focus()}
+ function openModal(key,trigger){
+  const target=modalPairs.find(m=>m.key===key);if(!target)return;
+  closeMenu();if(activeModal)activeModal.overlay.hidden=true;
+  lastFocus=trigger||document.activeElement;activeModal=target;target.overlay.hidden=false;body.style.overflow='hidden';target.close.focus();
+ }
+ document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',event=>{event.preventDefault();openModal(el.dataset.modal,el)}));
+ document.querySelectorAll('[data-open-modal]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.openModal,el)));
+ modalPairs.forEach(m=>{
+  m.close.addEventListener('click',closeActiveModal);
+  m.overlay.addEventListener('click',event=>{if(event.target===m.overlay)closeActiveModal()});
+ });
+ document.querySelectorAll('[data-demo-cta]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.demoCta+' is a sample button only. Northstar is a fictional concept; no request was sent.')));
+ document.addEventListener('keydown',event=>{
+  if(!activeModal)return;
+  if(event.key==='Escape'){closeActiveModal();return}
+  if(event.key==='Tab'){
+   const focusables=Array.from(activeModal.panel.querySelectorAll('a[href],button:not([disabled]),summary,[tabindex]:not([tabindex="-1"])')).filter(el=>el.offsetParent!==null);
+   if(!focusables.length)return;
+   const first=focusables[0],last=focusables[focusables.length-1];
+   if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+   else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
   }
-  let initialTheme='dark';
-  try{const savedTheme=localStorage.getItem('northstar-theme');if(savedTheme==='light'||savedTheme==='dark')initialTheme=savedTheme}catch(error){}
-  applyTheme(initialTheme,false);
-  themeToggle.addEventListener('click',()=>applyTheme(body.classList.contains('light')?'dark':'light',true));
-
-  function closeMenu(){
-    siteNav.classList.remove('is-open');
-    menuToggle.setAttribute('aria-expanded','false');
-    menuToggle.setAttribute('aria-label','Open navigation menu');
-    menuToggle.setAttribute('title','Open menu');
-    menuIcon.innerHTML='<path d="M4 7h16M4 12h16M4 17h16"/>';
-  }
-  function toggleMenu(){
-    const opening=!siteNav.classList.contains('is-open');
-    siteNav.classList.toggle('is-open',opening);
-    menuToggle.setAttribute('aria-expanded',String(opening));
-    menuToggle.setAttribute('aria-label',opening?'Close navigation menu':'Open navigation menu');
-    menuToggle.setAttribute('title',opening?'Close menu':'Open menu');
-    menuIcon.innerHTML=opening?'<path d="m6 6 12 12M18 6 6 18"/>':'<path d="M4 7h16M4 12h16M4 17h16"/>';
-  }
-  menuToggle.addEventListener('click',toggleMenu);
-  siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&siteNav.classList.contains('is-open')){closeMenu();menuToggle.focus()}});
-  window.addEventListener('resize',()=>{if(window.innerWidth>780)closeMenu()},{passive:true});
-
-  let parallaxFrame=0;
-  function updateParallax(){
-    if(motionPreference.matches){
-      root.style.setProperty('--grid-parallax','0px');
-      root.style.setProperty('--copy-parallax','0px');
-      root.style.setProperty('--visual-parallax','0px');
-      root.style.setProperty('--card-parallax','0px');
-      return;
-    }
-    const y=Math.max(0,window.scrollY||0);
-    root.style.setProperty('--grid-parallax',Math.min(y*.08,56)+'px');
-    root.style.setProperty('--copy-parallax',Math.min(y*.018,12)+'px');
-    root.style.setProperty('--visual-parallax',Math.min(y*.035,23)+'px');
-    root.style.setProperty('--card-parallax',Math.min(y*.025,16)+'px');
-  }
-  window.addEventListener('scroll',()=>{
-    if(parallaxFrame)return;
-    parallaxFrame=requestAnimationFrame(()=>{updateParallax();parallaxFrame=0});
-  },{passive:true});
-  window.addEventListener('resize',updateParallax,{passive:true});
-  if(motionPreference.addEventListener)motionPreference.addEventListener('change',updateParallax);
-  updateParallax();
-
-  const demoToast=document.getElementById('demoToast');
-  let demoToastTimer;
-  function showDemoNotice(label){
-    demoToast.textContent=label+' is a sample CTA only. This fictional concept has no real contact service; no message was sent.';
-    demoToast.hidden=false;
-    demoToast.classList.add('is-visible');
-    window.clearTimeout(demoToastTimer);
-    demoToastTimer=window.setTimeout(()=>{demoToast.classList.remove('is-visible');window.setTimeout(()=>{demoToast.hidden=true},220)},4200);
-  }
-  document.querySelectorAll('.demo-cta').forEach(button=>button.addEventListener('click',()=>showDemoNotice(button.dataset.demoCta)));
-
-  const navLinks=Array.from(siteNav.querySelectorAll('a'));
-  const observedSections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  if('IntersectionObserver' in window){
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(!entry.isIntersecting)return;
-        navLinks.forEach(link=>{
-          if(link.getAttribute('href')==='#'+entry.target.id)link.setAttribute('aria-current','location');
-          else link.removeAttribute('aria-current');
-        });
-      });
-    },{rootMargin:'-22% 0px -65% 0px',threshold:0});
-    observedSections.forEach(section=>observer.observe(section));
-  }
+ });
+ document.addEventListener('click',event=>{if(!siteNav.classList.contains('is-open'))return;if(!siteNav.contains(event.target)&&!menuToggle.contains(event.target))closeMenu()});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&siteNav.classList.contains('is-open')){closeMenu();menuToggle.focus()}});
+ window.addEventListener('resize',()=>{if(window.innerWidth>780)closeMenu()},{passive:true});
+ let frame=0;
+ function parallax(){
+  if(motionPreference.matches){root.style.setProperty('--grid-parallax','0px');root.style.setProperty('--copy-parallax','0px');root.style.setProperty('--visual-parallax','0px');root.style.setProperty('--card-parallax','0px');return}
+  const y=Math.max(0,window.scrollY||0);
+  root.style.setProperty('--grid-parallax',Math.min(y*.08,50)+'px');
+  root.style.setProperty('--copy-parallax',Math.min(y*.018,10)+'px');
+  root.style.setProperty('--visual-parallax',Math.min(y*.035,18)+'px');
+  root.style.setProperty('--card-parallax',Math.min(y*.025,12)+'px');
+ }
+ window.addEventListener('scroll',()=>{if(frame)return;frame=requestAnimationFrame(()=>{parallax();frame=0})},{passive:true});
+ window.addEventListener('resize',parallax,{passive:true});
+ if(motionPreference.addEventListener)motionPreference.addEventListener('change',parallax);
+ parallax();
 })();
 </script>
 </body>
