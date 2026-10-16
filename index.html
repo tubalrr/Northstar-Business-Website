@@ -190,6 +190,10 @@ h1 span,.accent-text{color:var(--accent)}
 .contact-status p{margin:8px 0 0;font-size:.8rem}
 .contact-status .actions{margin-top:18px}
 .contact-status .btn{width:100%;min-height:44px;font-size:.81rem}
+.contact-demo-actions{display:grid;grid-template-columns:1fr;gap:8px}
+.contact-demo-actions .btn{text-align:center}
+.demo-toast{position:fixed;left:50%;bottom:24px;z-index:80;max-width:calc(100vw - 32px);padding:13px 18px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);color:var(--text);box-shadow:var(--shadow);font-size:.84rem;line-height:1.55;text-align:center;transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.demo-toast.is-visible{opacity:1;transform:translate(-50%,0)}
 .site-footer{padding:29px 0 35px;border-top:1px solid var(--line)}
 .footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
 .footer-brand{font-size:.9rem;font-weight:800}
@@ -456,9 +460,11 @@ h1 span,.accent-text{color:var(--accent)}
         <aside class="contact-status">
           <strong>Contact channels are not configured.</strong>
           <p>Northstar is fictional, so this demo has no real inbox, consultation service, or project intake process. No information is sent from this page.</p>
-          <div class="actions">
+          <div class="actions contact-demo-actions">
             <a class="btn btn-primary" href="#services">Explore Sample Services <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-secondary" href="#top">Back to Top ↑</a>
+            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Get in Touch">Get in Touch</button>
+            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Request a Consultation">Request a Consultation</button>
+            <button class="btn btn-secondary demo-cta" type="button" data-demo-cta="Start Your Project Today">Start Your Project Today</button>
           </div>
         </aside>
       </div>
@@ -478,6 +484,7 @@ h1 span,.accent-text{color:var(--accent)}
     </div>
   </div>
 </footer>
+<div class="demo-toast" id="demoToast" role="status" aria-live="polite" hidden></div>
 
 <script>
 (function(){
@@ -550,6 +557,17 @@ h1 span,.accent-text{color:var(--accent)}
   window.addEventListener('resize',updateParallax,{passive:true});
   if(motionPreference.addEventListener)motionPreference.addEventListener('change',updateParallax);
   updateParallax();
+
+  const demoToast=document.getElementById('demoToast');
+  let demoToastTimer;
+  function showDemoNotice(label){
+    demoToast.textContent=label+' is a sample CTA only. This fictional concept has no real contact service; no message was sent.';
+    demoToast.hidden=false;
+    demoToast.classList.add('is-visible');
+    window.clearTimeout(demoToastTimer);
+    demoToastTimer=window.setTimeout(()=>{demoToast.classList.remove('is-visible');window.setTimeout(()=>{demoToast.hidden=true},220)},4200);
+  }
+  document.querySelectorAll('.demo-cta').forEach(button=>button.addEventListener('click',()=>showDemoNotice(button.dataset.demoCta)));
 
   const navLinks=Array.from(siteNav.querySelectorAll('a'));
   const observedSections=navLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
