@@ -282,7 +282,7 @@ h1 span,.accent-text{color:var(--accent)}
 <footer class="site-footer">
  <div class="footer-inner">
   <p class="footer-note">© <span id="year"></span> Northstar concept · Fictional design demo only.</p>
-  <div class="footer-links"><a href="#contact" data-modal="contact">Contact concept</a><a href="#privacy" data-modal="privacy">Privacy</a></div>
+  <div class="footer-links"><a href="#contact" data-modal="contact">Contact concept</a><a href="#privacy" data-modal="privacy">Privacy</a><a href="admin.html">Admin Inbox</a></div>
  </div>
 </footer>
 
@@ -500,7 +500,11 @@ h1 span,.accent-text{color:var(--accent)}
    if(type&&mode){type.value=mode==='project'?'New project':mode==='contact'?'General inquiry':'Consultation';}
    if(lead){lead.textContent=mode==='project'?'Tell us a little about the project you have in mind.':mode==='contact'?'Share what you would like to ask about.':'Share a few details to preview a consultation request.';}
    const form=document.getElementById('bookingForm'),success=document.getElementById('bookingSuccess');
-   if(form)form.hidden=false;if(success)success.hidden=true;
+   const wasSuccess=!!(success&&!success.hidden);
+   if(form){form.hidden=false;if(wasSuccess){form.reset();delete form.dataset.submitted;}}
+   if(success)success.hidden=true;
+   const requestStatus=document.getElementById('bookingFormStatus');
+   if(requestStatus){requestStatus.hidden=true;requestStatus.textContent='';requestStatus.className='form-status';}
    const date=document.getElementById('bookingDate');if(date)date.min=new Date().toISOString().slice(0,10);
   }
   target.close.focus();
@@ -609,6 +613,7 @@ form.addEventListener("submit",async event=>{
   });
   summary.textContent="Your request has been saved. Reference ID: "+docRef.id+". The Northstar team can review it in the private admin inbox.";
   form.hidden=true;
+  form.dataset.submitted="true";
   success.hidden=false;
   showFormStatus("Request submitted successfully.", "success");
  }catch(error){
