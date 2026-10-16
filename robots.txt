@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tubalrr.github.io/Northstar-Business-Website/sitemap.xml
